@@ -853,7 +853,7 @@ body.menu-open {
   .linksContainer{
     position: absolute !important;
     top: 90px;
-    right: -500px;
+    right: -100%;
     background-color: black;
     height: 90vh;
     flex-direction: column;
@@ -945,6 +945,10 @@ body.menu-open {
       }
 
     }
+  }
+
+  .linksContainer{
+    width: 100% !important;
   }
 }
 
