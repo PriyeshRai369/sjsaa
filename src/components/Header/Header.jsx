@@ -36,7 +36,7 @@ export default function Header() {
     <header className="header">
       <nav className="nav">
         <div className="logoContainer">
-          <p><span>St Johns School</span> Alumni Assocation</p>
+          <p><span>St John&apos;s School</span> Alumni Assocation</p>
           {/* <img src="/images/alumni.png" alt="" /> */}
         </div>
 

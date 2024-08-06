@@ -27,9 +27,7 @@ body {
   width: 100%;
   position: relative;
   top: 0;
-  /* left: 0; */
   background-color: black;
-  /* border-bottom: 1px solid black; */
   z-index: 999;
 
   .nav {
@@ -48,11 +46,12 @@ body {
         color: #f2f2f2;
         font-weight: 700;
         margin: 0;
-        font-size: 23px;
-        line-height: 25px;
+        font-size: 19.7px;
+        line-height: 22px;
+        text-transform: uppercase;
 
-        span{
-          font-size: 26px;
+        span {
+          font-size: 22px;
         }
       }
 
@@ -65,7 +64,6 @@ body {
       position: relative;
       display: flex;
       align-items: center;
-      /* justify-content: space-between; */
       gap: 20px;
 
       div {
@@ -852,7 +850,7 @@ body.menu-open {
   .menuBtnContainer {
     display: block !important;
   }
-  .linksContainer{
+  .linksContainer {
     position: absolute !important;
     top: 90px;
     right: -100%;
@@ -864,25 +862,24 @@ body.menu-open {
     justify-content: center;
     transition: right 1s ease-in-out;
 
-    .navLinks{
+    .navLinks {
       padding: 7px 50px !important;
       border: 1px solid #fab341;
       font-size: 1.6rem !important;
 
-      &::after{
+      &::after {
         display: none;
       }
     }
-    .act{
+    .act {
       font-size: 1.9rem !important;
       padding: 7px 50px !important;
     }
   }
-  .open{
+  .open {
     right: 0;
     transition: right 1s ease-in-out;
   }
-  
 }
 
 .menuBtnContainer {
@@ -930,55 +927,52 @@ body.menu-open {
   stroke-width: 6;
 }
 
-
-@media (max-width:668px) {
-  .nav{
+@media (max-width: 668px) {
+  .nav {
     padding: 20px 50px !important;
   }
-  .logoContainer{
+  .logoContainer {
     width: 160px !important;
 
-    p{
-      font-size: 15px !important;
-      line-height: 18px !important;
-      
-      span{
-        font-size: 18px !important;
-      }
+    p {
+      font-size: 13.5px !important;
+      line-height: 15px !important;
 
+      span {
+        font-size: 15px !important;
+      }
     }
   }
 
-  .linksContainer{
+  .linksContainer {
     width: 100% !important;
   }
 }
 
-@media (max-width:480px) {
-  .nav{
+@media (max-width: 480px) {
+  .nav {
     padding: 20px !important;
   }
-  .logoContainer{
+  .logoContainer {
     width: 160px !important;
 
-    p{
-      font-size: 14px !important;
-      line-height: 18px !important;
-      
-      span{
-        font-size: 16px !important;
-      }
+    p {
+      font-size: 12.5px !important;
+      line-height: 13px !important;
 
+      span {
+        font-size: 14px !important;
+      }
     }
   }
 
-  .bann{
+  .bann {
     display: none !important;
   }
-  .carousel-inner .carousel-item .mobBanner{
+  .carousel-inner .carousel-item .mobBanner {
     display: block !important;
   }
 }
-.carousel-inner .carousel-item .mobBanner{
+.carousel-inner .carousel-item .mobBanner {
   display: none;
 }
