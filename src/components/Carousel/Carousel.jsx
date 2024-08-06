@@ -10,7 +10,12 @@ export default function Carousel() {
           <div className="carousel-item active">
             <img
               src="/images/banner/banner-01.jpg"
-              className="d-block w-100"
+              className=" w-100 bann"
+              alt="..."
+            />
+            <img
+              src="/images/banner/mobileBanner-01.jpg"
+              className=" w-100 mobBanner"
               alt="..."
             />
           </div>

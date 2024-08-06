@@ -965,4 +965,14 @@ body.menu-open {
 
     }
   }
+
+  .bann{
+    display: none !important;
+  }
+  .carousel-inner .carousel-item .mobBanner{
+    display: block !important;
+  }
+}
+.carousel-inner .carousel-item .mobBanner{
+  display: none;
 }
