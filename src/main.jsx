@@ -5,12 +5,18 @@ import './index.css'
 import { createBrowserRouter,createRoutesFromElements, RouterProvider, Route } from 'react-router-dom'
 import AboutUs from './components/About/AboutUs.jsx'
 import Home from './components/Home/Home.jsx'
+import OurAlumni from './components/OurAlumni/OurAlumni.jsx'
+import UpcomingEvents from './components/UpcomingEvents/UpcomingEvents.jsx'
+import Gallery from './components/Gallery/Gallery.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<App/>}>
       <Route path='/' element={<Home/>}/>
+      <Route path='/our-alumni' element={<OurAlumni/>}/>
       <Route path='/about-us' element={<AboutUs/>}/>
+      <Route path='/event' element={<UpcomingEvents/>}/>
+      <Route path='/gallery' element={<Gallery/>}/>
     </Route>
   )
 )

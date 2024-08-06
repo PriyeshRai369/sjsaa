@@ -1,103 +1,115 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { NavLink } from "react-router-dom";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 export default function Header() {
   const [isOpened, setIsOpened] = useState(false);
+  const headerRef = useRef(null);
 
   const handleToggle = () => {
     setIsOpened(!isOpened);
   };
 
   useEffect(() => {
-    const header = document.querySelector(".header");
-
     const handleScroll = () => {
-      if (window.scrollY > 170) {
-        header.classList.add("fixed");
-      } else {
-        header.classList.remove("fixed");
-      }
+      if (headerRef.current) {
+        if (window.scrollY > 170) {
+          headerRef.current.classList.add("fixed");
+        } else {
+          headerRef.current.classList.remove("fixed");
+        }
 
-      if (window.scrollY > 100) {
-        header.classList.add("hidden");
-      } else {
-        header.classList.remove("hidden");
+        if (window.scrollY > 100) {
+          headerRef.current.classList.add("hidden");
+        } else {
+          headerRef.current.classList.remove("hidden");
+        }
       }
     };
 
     window.addEventListener("scroll", handleScroll);
+    handleScroll();
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
+  const logoRef = useRef();
+
+  // useGSAP(() => {
+  //   const text = logoRef.current.textContent;
+  //   const logoHTML = text
+  //     .split("")
+  //     .map((val) => (val === " " ? "&nbsp;" : `<span>${val}</span>`))
+  //     .join("");
+  //   logoRef.current.innerHTML = logoHTML;
+
+  //   const tl = gsap.timeline()
+  //   tl.from(".logoText span", {
+  //     duration: 0.4,
+  //     opacity: 0,
+  //     stagger: 0.1,
+  //     ease: "power4.out",
+  //   });
+  // }, []);
   return (
-    <header className="header">
+    <header className="header" ref={headerRef}>
       <nav className="nav">
         <div className="logoContainer">
-          <p><span>St John&apos;s School</span> Alumni Assocation</p>
+          <p className="logoText" ref={logoRef}>
+            <span>St John&apos;s School</span> Alumni Association
+          </p>
           {/* <img src="/images/alumni.png" alt="" /> */}
         </div>
 
-        <div className={`linksContainer ${isOpened && 'open'}`}>
+        <div className={`linksContainer ${isOpened ? "open" : ""}`}>
           <div>
             <NavLink
               to="/"
-              className={({ isActive }) => `${isActive ? "act" : "navLinks"}`}
-              onClick={()=>setIsOpened(false)}
+              className={({ isActive }) => (isActive ? "act" : "navLinks")}
+              onClick={() => setIsOpened(false)}
             >
               Home
             </NavLink>
           </div>
-
           <div>
             <NavLink
               to="/our-alumni"
-              className={({ isActive }) => `${isActive ? "act" : "navLinks"}`}
-              onClick={()=>setIsOpened(false)}
+              className={({ isActive }) => (isActive ? "act" : "navLinks")}
+              onClick={() => setIsOpened(false)}
             >
-              Our Alumnis
+              Our Alumni
             </NavLink>
           </div>
-
           <div>
             <NavLink
               to="/about-us"
-              className={({ isActive }) => `${isActive ? "act" : "navLinks"}`}
-              onClick={()=>setIsOpened(false)}
+              className={({ isActive }) => (isActive ? "act" : "navLinks")}
+              onClick={() => setIsOpened(false)}
             >
-              About US
+              About Us
             </NavLink>
           </div>
-
           <div>
             <NavLink
               to="/event"
-              className={({ isActive }) => `${isActive ? "act" : "navLinks"}`}
-              onClick={()=>setIsOpened(false)}
+              className={({ isActive }) => (isActive ? "act" : "navLinks")}
+              onClick={() => setIsOpened(false)}
             >
               Events
             </NavLink>
           </div>
-
           <div>
             <NavLink
               to="/gallery"
-              className={({ isActive }) => `${isActive ? "act" : "navLinks"}`}
+              className={({ isActive }) => (isActive ? "act" : "navLinks")}
+              onClick={() => setIsOpened(false)}
             >
               Gallery
             </NavLink>
           </div>
-
-          {/* <div>
-            <NavLink
-              to="/contact"
-              className={({ isActive }) => `${isActive ? "act" : "navLinks"}`}
-            >
-              Contact
-            </NavLink>
-          </div> */}
         </div>
 
         <div className="menuBtnContainer">
@@ -121,10 +133,6 @@ export default function Header() {
             </svg>
           </button>
         </div>
-
-        {/* <div className="btnContainer">
-            <button>Login</button>
-        </div> */}
       </nav>
     </header>
   );
