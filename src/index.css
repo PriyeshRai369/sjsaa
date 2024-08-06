@@ -927,3 +927,42 @@ body.menu-open {
   stroke-dashoffset: -134;
   stroke-width: 6;
 }
+
+
+@media (max-width:668px) {
+  .nav{
+    padding: 20px 50px !important;
+  }
+  .logoContainer{
+    width: 160px !important;
+
+    p{
+      font-size: 15px !important;
+      line-height: 18px !important;
+      
+      span{
+        font-size: 18px !important;
+      }
+
+    }
+  }
+}
+
+@media (max-width:480px) {
+  .nav{
+    padding: 20px !important;
+  }
+  .logoContainer{
+    width: 160px !important;
+
+    p{
+      font-size: 14px !important;
+      line-height: 18px !important;
+      
+      span{
+        font-size: 16px !important;
+      }
+
+    }
+  }
+}
