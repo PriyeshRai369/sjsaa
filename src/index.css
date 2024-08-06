@@ -857,7 +857,7 @@ body.menu-open {
     background-color: black;
     height: 90vh;
     flex-direction: column;
-    padding: 20px 100px;
+    padding: 20px 70px;
     gap: 50px !important;
     justify-content: center;
     transition: right 1s ease-in-out;
