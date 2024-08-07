@@ -50,8 +50,15 @@ body {
         line-height: 22px;
         text-transform: uppercase;
 
-        span {
+        .logoText {
           font-size: 22px;
+          display: inline-block;
+
+          span{
+            display: inline-block;
+          }
+        }
+        .secondLogo{
           display: inline-block;
         }
       }

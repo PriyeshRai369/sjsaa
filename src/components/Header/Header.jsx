@@ -3,9 +3,12 @@ import { NavLink } from "react-router-dom";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
+gsap.registerPlugin(useGSAP);
+
 export default function Header() {
   const [isOpened, setIsOpened] = useState(false);
   const headerRef = useRef(null);
+  const container = useRef();
 
   const handleToggle = () => {
     setIsOpened(!isOpened);
@@ -36,36 +39,56 @@ export default function Header() {
     };
   }, []);
 
-  const logoRef = useRef();
+  useGSAP(
+    () => {
+      const tl = gsap.timeline();
 
-  // useGSAP(() => {
-  //   const text = logoRef.current.textContent;
-  //   const logoHTML = text
-  //     .split("")
-  //     .map((val) => (val === " " ? "&nbsp;" : `<span>${val}</span>`))
-  //     .join("");
-  //   logoRef.current.innerHTML = logoHTML;
+      const logo = document
+        .querySelector(".logoText")
+        .textContent.split("")
+        .map((val) => (val === " " ? "&nbsp;" : `<span>${val}</span>`))
+        .join("");
+      // console.log(logo);
 
-  //   const tl = gsap.timeline()
-  //   tl.from(".logoText span", {
-  //     duration: 0.4,
-  //     opacity: 0,
-  //     stagger: 0.1,
-  //     ease: "power4.out",
-  //   });
-  // }, []);
+      document.querySelector('.logoText').innerHTML = logo
+      tl.from('.logoText span',{
+        opacity:0,
+        delay:0.5,
+        duration:0.5,
+        stagger:0.09,
+      })
+      tl.from('.secondLogo',{
+        duration:0.5,
+        opacity:0
+      })
+
+      gsap.from(".lkns",{
+        delay:1,
+        y:-50,
+        duration:0.8,
+        opacity:0,
+        stagger:0.1
+      })
+
+
+
+    },
+    { scope: container }
+  );
+
   return (
     <header className="header" ref={headerRef}>
-      <nav className="nav">
+      <nav className="nav" ref={container}>
         <div className="logoContainer">
-          <p className="logoText" ref={logoRef}>
-            <span>St John&apos;s School</span> Alumni Association
+          <p>
+            <span className="logoText">St John&apos;s School</span> 
+            <span className="secondLogo">Alumni Association</span>
           </p>
           {/* <img src="/images/alumni.png" alt="" /> */}
         </div>
 
         <div className={`linksContainer ${isOpened ? "open" : ""}`}>
-          <div>
+          <div className="lkns">
             <NavLink
               to="/"
               className={({ isActive }) => (isActive ? "act" : "navLinks")}
@@ -74,7 +97,7 @@ export default function Header() {
               Home
             </NavLink>
           </div>
-          <div>
+          <div className="lkns">
             <NavLink
               to="/our-alumni"
               className={({ isActive }) => (isActive ? "act" : "navLinks")}
@@ -83,7 +106,7 @@ export default function Header() {
               Our Alumni
             </NavLink>
           </div>
-          <div>
+          <div className="lkns">
             <NavLink
               to="/about-us"
               className={({ isActive }) => (isActive ? "act" : "navLinks")}
@@ -92,7 +115,7 @@ export default function Header() {
               About Us
             </NavLink>
           </div>
-          <div>
+          <div className="lkns">
             <NavLink
               to="/event"
               className={({ isActive }) => (isActive ? "act" : "navLinks")}
@@ -101,7 +124,7 @@ export default function Header() {
               Events
             </NavLink>
           </div>
-          <div>
+          <div className="lkns">
             <NavLink
               to="/gallery"
               className={({ isActive }) => (isActive ? "act" : "navLinks")}
