@@ -949,6 +949,9 @@ body.menu-open {
       span {
         font-size: 15px !important;
       }
+      .secondLogo{
+        font-size: 13px !important;
+      }
     }
   }
 
@@ -970,6 +973,9 @@ body.menu-open {
 
       span {
         font-size: 14px !important;
+      }
+      .secondLogo{
+        font-size: 12px !important;
       }
     }
   }
