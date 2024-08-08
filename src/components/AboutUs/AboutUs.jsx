@@ -10,7 +10,7 @@ export default function AboutUs() {
           <h1>About Us</h1>
         </div>
         <div className="row row-gap-4">
-          <div className="col-lg-8">
+          <div className="col-lg-7">
             <div className="aboutContainer">
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore,
@@ -22,7 +22,7 @@ export default function AboutUs() {
               </p>
             </div>
           </div>
-          <div className="col-lg-4">
+          <div className="col-lg-5">
             <div className="eventsContainer">
               <div className="eventTitle">
                 <h4>Upcoming Events</h4>

@@ -1371,7 +1371,7 @@ table {
 .eventsContainer {
   background: #fff;
   border-radius: 15px;
-  height: 240px;
+  height: 260px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
   position: relative;
   z-index: 1;
@@ -1490,5 +1490,8 @@ table {
     background: transparent !important;
     color: white !important;
     border: 1px solid #f08a5d;
+  }
+  .eventsContainer{
+    height: 100% !important;
   }
 }
