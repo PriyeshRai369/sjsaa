@@ -33,17 +33,20 @@ export default function AboutUs() {
                     <p>DEC</p>
                     <h2>19</h2>
                   </div>
+                  <div style={{width:"2px",minHeight:"70px",background:"#f08a5d",margin:"0 5px"}}></div>
                   <div className="titleContainer">
                     <Link to={"/event"}>
                       Meet & Greet.<i className="fa-solid fa-arrow-right "></i>
                     </Link>
                   </div>
                 </div>
+                
                 <div className="eventDetailsBox">
                   <div className="dateContainer">
                     <p>DEC</p>
                     <h2>20</h2>
                   </div>
+                  <div style={{width:"2px",minHeight:"70px",background:"#f08a5d",margin:"0 5px"}}></div>
                   <div className="titleContainer">
                     <Link to={"/event"}>
                       Memories Events & Grand Party for '99' Batch.
@@ -56,6 +59,7 @@ export default function AboutUs() {
                     <p>DEC</p>
                     <h2>21</h2>
                   </div>
+                  <div style={{width:"2px",minHeight:"70px",background:"#f08a5d",margin:"0 5px"}}></div>
                   <div className="titleContainer">
                     <Link to={"/event"}>
                       School Functions All Day Long Followed By Gala Dinner At
