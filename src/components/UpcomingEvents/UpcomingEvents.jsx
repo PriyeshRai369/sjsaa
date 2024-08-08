@@ -1,8 +1,6 @@
-
+import Events from "../Events/Events";
 export default function UpcomingEvents() {
   return (
-    <div>
-      
-    </div>
+    <Events/>
   )
 }

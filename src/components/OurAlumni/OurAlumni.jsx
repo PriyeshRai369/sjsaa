@@ -7,7 +7,7 @@ export default function OurAlumni() {
     <section className="sectionContainer">
       <div className="container">
         <div className="title">
-          <h1>Alunmi Details</h1>
+          <h1>Members Details</h1>
         </div>
         <div className="row">
           <div className="col-lg-12">
