@@ -29,7 +29,7 @@ export default function Testimonials() {
             <div className="row">
               <Carousel
                 responsive={responsive}
-                  autoPlay={true}
+                autoPlay={true}
                 swipeable={true}
                 draggable={true}
                 showDots={true}
@@ -120,7 +120,7 @@ export default function Testimonials() {
                         alt=""
                       />
                     </div>
-                    <hr style={{ color: "white" }} />
+                    <hr style={{ color: "#F08A5D" }} />
                     <div className="testimonialsDetails">
                       <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -214,7 +214,7 @@ export default function Testimonials() {
                         alt=""
                       />
                     </div>
-                    <hr style={{ color: "white" }} />
+                    <hr style={{ color: "#F08A5D" }} />
                     <div className="testimonialsDetails">
                       <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -308,7 +308,7 @@ export default function Testimonials() {
                         alt=""
                       />
                     </div>
-                    <hr style={{ color: "white" }} />
+                    <hr style={{ color: "#F08A5D" }} />
                     <div className="testimonialsDetails">
                       <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.

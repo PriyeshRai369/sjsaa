@@ -9,6 +9,7 @@ export default function Header() {
   const [isOpened, setIsOpened] = useState(false);
   const headerRef = useRef(null);
   const container = useRef();
+  const upperHeaderRef = useRef();
 
   const handleToggle = () => {
     setIsOpened(!isOpened);
@@ -17,13 +18,13 @@ export default function Header() {
   useEffect(() => {
     const handleScroll = () => {
       if (headerRef.current) {
-        if (window.scrollY > 170) {
+        if (window.scrollY > 200) {
           headerRef.current.classList.add("fixed");
         } else {
           headerRef.current.classList.remove("fixed");
         }
 
-        if (window.scrollY > 100) {
+        if (window.scrollY > 130) {
           headerRef.current.classList.add("hidden");
         } else {
           headerRef.current.classList.remove("hidden");
@@ -39,6 +40,40 @@ export default function Header() {
     };
   }, []);
 
+  useEffect(() => {
+    const handleScrollnew = () => {
+      if (upperHeaderRef.current) {
+        if (window.scrollY > 200 && window.innerWidth < 950) {
+          upperHeaderRef.current.classList.add("fixed");
+        } else {
+          upperHeaderRef.current.classList.remove("fixed");
+        }
+
+        if (window.scrollY > 130 && window.innerWidth < 950) {
+          upperHeaderRef.current.classList.add("hidden");
+        } else {
+          upperHeaderRef.current.classList.remove("hidden");
+        }
+      }
+    };
+
+    const handleResize = () => {
+      if (window.innerWidth >= 950) {
+        upperHeaderRef.current.classList.remove("fixed", "hidden");
+      }
+    };
+
+    window.addEventListener("scroll", handleScrollnew);
+    window.addEventListener("resize", handleResize);
+    handleScrollnew();
+    handleResize();
+
+    return () => {
+      window.removeEventListener("scroll", handleScrollnew);
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   useGSAP(
     () => {
       const tl = gsap.timeline();
@@ -50,91 +85,46 @@ export default function Header() {
         .join("");
       // console.log(logo);
 
-      document.querySelector('.logoText').innerHTML = logo
-      tl.from('.logoText span',{
-        opacity:0,
-        delay:0.5,
-        duration:0.5,
-        stagger:0.09,
-      })
-      tl.from('.secondLogo',{
-        duration:0.5,
-        opacity:0
-      })
-
-      gsap.from(".lkns",{
-        delay:1,
+      document.querySelector(".logoText").innerHTML = logo;
+      tl.from(".logoText span", {
+        opacity: 0,
+        delay: 0.5,
+        duration: 0.5,
+        stagger: 0.09,
+      });
+      tl.from(".secondLogo", {
+        duration: 0.5,
+        opacity: 0,
+      });
+      gsap.from(".btnContainer", {
+        delay: 1.2,
         y:-50,
-        duration:0.8,
-        opacity:0,
-        stagger:0.1
-      })
+        duration: 0.5,
+        opacity: 0,
+      });
 
-
-
+      gsap.from(".lkns", {
+        delay: 1,
+        y: -50,
+        duration: 0.8,
+        opacity: 0,
+        stagger: 0.1,
+      });
     },
     { scope: container }
   );
 
   return (
-    <header className="header" ref={headerRef}>
-      <nav className="nav" ref={container}>
+    <header className="header" ref={container}>
+      <div className="upperHeader" ref={upperHeaderRef}>
         <div className="logoContainer">
           <p>
-            <span className="logoText">St John&apos;s School</span> 
+            <span className="logoText">St John&apos;s School</span>
             <span className="secondLogo">Alumni Association</span>
           </p>
-          {/* <img src="/images/alumni.png" alt="" /> */}
         </div>
-
-        <div className={`linksContainer ${isOpened ? "open" : ""}`}>
-          <div className="lkns">
-            <NavLink
-              to="/"
-              className={({ isActive }) => (isActive ? "act" : "navLinks")}
-              onClick={() => setIsOpened(false)}
-            >
-              Home
-            </NavLink>
-          </div>
-          <div className="lkns">
-            <NavLink
-              to="/our-alumni"
-              className={({ isActive }) => (isActive ? "act" : "navLinks")}
-              onClick={() => setIsOpened(false)}
-            >
-              Our Alumni
-            </NavLink>
-          </div>
-          <div className="lkns">
-            <NavLink
-              to="/about-us"
-              className={({ isActive }) => (isActive ? "act" : "navLinks")}
-              onClick={() => setIsOpened(false)}
-            >
-              About Us
-            </NavLink>
-          </div>
-          <div className="lkns">
-            <NavLink
-              to="/event"
-              className={({ isActive }) => (isActive ? "act" : "navLinks")}
-              onClick={() => setIsOpened(false)}
-            >
-              Events
-            </NavLink>
-          </div>
-          <div className="lkns">
-            <NavLink
-              to="/gallery"
-              className={({ isActive }) => (isActive ? "act" : "navLinks")}
-              onClick={() => setIsOpened(false)}
-            >
-              Gallery
-            </NavLink>
-          </div>
-        </div>
-
+        <div className="btnContainer">
+          <button className="loginBtn">Login</button>
         <div className="menuBtnContainer">
           <button
             id="menuBtns"
@@ -155,6 +145,70 @@ export default function Header() {
               />
             </svg>
           </button>
+        </div>
+        </div>
+      </div>
+      <nav className="nav" ref={headerRef}>
+        <div className={`linksContainer ${isOpened ? "open" : ""}`}>
+          <div className="lkns">
+            <NavLink
+              to="/"
+              className={({ isActive }) => (isActive ? "act" : "navLinks")}
+              onClick={() => setIsOpened(false)}
+            >
+              Home
+            </NavLink>
+          </div>
+          {/* <div style={{width:"2px",height:"40px",backgroundColor:"black"}}></div> */}
+          <div className="lkns">
+            <NavLink
+              to="/about-us"
+              className={({ isActive }) => (isActive ? "act" : "navLinks")}
+              onClick={() => setIsOpened(false)}
+            >
+              About Us
+            </NavLink>
+          </div>
+          {/* <div style={{width:"2px",height:"40px",backgroundColor:"black"}}></div> */}
+          <div className="lkns">
+            <NavLink
+              to="/our-alumni"
+              className={({ isActive }) => (isActive ? "act" : "navLinks")}
+              onClick={() => setIsOpened(false)}
+            >
+              Members
+            </NavLink>
+          </div>
+          {/* <div style={{width:"2px",height:"40px",backgroundColor:"black"}}></div> */}
+          <div className="lkns">
+            <NavLink
+              to="/engage"
+              className={({ isActive }) => (isActive ? "act" : "navLinks")}
+              onClick={() => setIsOpened(false)}
+            >
+              Engage
+            </NavLink>
+          </div>
+          {/* <div style={{width:"2px",height:"40px",backgroundColor:"black"}}></div> */}
+          <div className="lkns">
+            <NavLink
+              to="/event"
+              className={({ isActive }) => (isActive ? "act" : "navLinks")}
+              onClick={() => setIsOpened(false)}
+            >
+              Events
+            </NavLink>
+          </div>
+          {/* <div style={{width:"2px",height:"40px",backgroundColor:"black"}}></div> */}
+          <div className="lkns">
+            <NavLink
+              to="/gallery"
+              className={({ isActive }) => (isActive ? "act" : "navLinks")}
+              onClick={() => setIsOpened(false)}
+            >
+              Gallery
+            </NavLink>
+          </div>
         </div>
       </nav>
     </header>

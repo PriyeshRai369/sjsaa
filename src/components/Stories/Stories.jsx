@@ -3,7 +3,7 @@ export default function Stories() {
     <section className="sectionContainer">
       <div className="container">
         <div className="title">
-          <h1>Our Campus Stories</h1>
+          <h1>Gallery</h1>
         </div>
         <div className="row row-gap-5">
           <div className="col-lg-4 col-md-6 col-sm-12">

@@ -18,35 +18,35 @@ export default function Footer() {
                     src="https://cdn.lordicon.com/iqagrlso.json"
                     trigger="hover"
                     state="hover-draw"
-                    colors="primary:#fab341,secondary:#fab341"
+                    colors="primary:#171717,secondary:#171717"
                     style={{ width: "50px", height: "50px" }}
                   ></lord-icon>
                   <lord-icon
                     src="https://cdn.lordicon.com/mdyiqybm.json"
                     trigger="hover"
                     state="hover-draw"
-                    colors="primary:#fab341,secondary:#fab341"
+                    colors="primary:#171717,secondary:#171717"
                     style={{ width: "50px", height: "50px" }}
                   ></lord-icon>
                   <lord-icon
                     src="https://cdn.lordicon.com/ogbssbzd.json"
                     trigger="morph"
                     state="morph-logotype"
-                    colors="primary:#fab341,secondary:#fab341"
+                    colors="primary:#171717,secondary:#171717"
                     style={{ width: "50px", height: "50px" }}
                   ></lord-icon>
                   <lord-icon
                     src="https://cdn.lordicon.com/cywksamr.json"
                     trigger="morph"
                     state="hover-draw"
-                    colors="primary:#fab341,secondary:#fab341"
+                    colors="primary:#171717,secondary:#171717"
                     style={{ width: "50px", height: "50px" }}
                   ></lord-icon>
                   <lord-icon
                     src="https://cdn.lordicon.com/zkyoxhhn.json"
                     trigger="hover"
                     state="hover-jump"
-                    colors="primary:#fab341,secondary:#fab341"
+                    colors="primary:#171717,secondary:#171717"
                     style={{ width: "50px", height: "50px" }}
                   ></lord-icon>
                 </div>
@@ -82,7 +82,7 @@ export default function Footer() {
                 <lord-icon
                   src="https://cdn.lordicon.com/mahizafr.json"
                   trigger="hover"
-                  colors="primary:#fab341,secondary:#fab341"
+                  colors="primary:#171717,secondary:#171717"
                   style={{ width: "50px", height: "50px" }}
                 ></lord-icon>{" "}
                 <span className="mobNo">+91 1234567890</span>
@@ -90,7 +90,7 @@ export default function Footer() {
                 <lord-icon
                   src="https://cdn.lordicon.com/aycieyht.json"
                   trigger="hover"
-                  colors="primary:#fab341,secondary:#fab341"
+                  colors="primary:#171717,secondary:#171717"
                   style={{ width: "50px", height: "50px" }}
                 ></lord-icon>{" "}
                 <span className="mobNo">test@gmail.com</span>
