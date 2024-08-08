@@ -1008,6 +1008,9 @@ body.menu-open {
   .carousel-inner .carousel-item .mobBanner {
     display: block !important;
   }
+  .titleContainer a{
+    font-size: 20px !important;
+  }
 }
 .carousel-inner .carousel-item .mobBanner {
   display: none;
