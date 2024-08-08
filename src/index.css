@@ -1403,11 +1403,13 @@ table {
   padding: 10px;
   border-radius: 10px;
   display: flex;
+  align-items: center;
   margin-bottom: 10px;
 }
 .dateContainer {
   position: relative;
   width: 70px;
+  height: 70px;
   border-right: 1px solid;
   text-align: center;
   display: flex;
