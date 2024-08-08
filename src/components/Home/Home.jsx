@@ -16,7 +16,7 @@ export default function Home() {
       <AboutUs/>
       <OurNotableAlumni />
       <Stories/>
-      <Events/>
+      {/* <Events/> */}
       <Vision/>
       <MessageForAlumni/>
       {/* <Announcements/> */}
