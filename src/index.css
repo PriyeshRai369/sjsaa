@@ -865,19 +865,21 @@ body.menu-open {
   .menuBtnContainer {
     display: block !important;
   }
+  .lkns{
+    margin-bottom: 25px;
+    text-align: center;
+  }
   .linksContainer {
     position: absolute !important;
-    top: 5px;
+    top: 0px;
     right: -100%;
     background-color: black;
-    flex-direction: column;
-    padding: 50px;
-    gap: 20px !important;
-    justify-content: center;
+    display: block !important;
     transition: right 1s ease-in-out;
     z-index: 9999;
     overflow-y: scroll;
     scrollbar-width: none;
+    padding: 40px 30px;
     .navLinks {
       padding: 7px 50px !important;
       border: 1px solid #f08a5d;
@@ -896,7 +898,7 @@ body.menu-open {
   }
   .open {
     right: 0;
-    transition: right 1s ease-in-out;
+    transition: right .3s ease-in-out;
   }
 }
 
@@ -1498,6 +1500,9 @@ table {
     background: transparent !important;
     color: white !important;
     border: 1px solid #f08a5d;
+    width: 100% !important;
+    left: 0 !important;
+    transition: display 0.5s;
   }
   .eventsContainer {
     height: 100% !important;
@@ -1632,5 +1637,5 @@ table {
   cursor: pointer;
 }
 .scrolledMenu{
-  top:80px !important
+  top:72px !important
 }

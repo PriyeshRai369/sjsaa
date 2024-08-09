@@ -17,6 +17,12 @@ export default function Header() {
   const linkRef = useRef()
   const handleToggle = () => {
     setIsOpened(!isOpened);
+    setDropOpen(false)
+    if (!isOpened && window.scrollY > 200 && window.innerWidth < 950) {
+      linkRef.current.classList.add("scrolledMenu");
+    } else if (isOpened) {
+      linkRef.current.classList.remove("scrolledMenu");
+    }
   };
 
   useEffect(() => {
@@ -49,12 +55,12 @@ export default function Header() {
       if (upperHeaderRef.current) {
         if (window.scrollY > 200 && window.innerWidth < 950) {
           upperHeaderRef.current.classList.add("fixed");
-          linkRef.current.classList.add("scrolledMenu")
+          linkRef.current.classList.add("scrolledMenu");
         } else {
           upperHeaderRef.current.classList.remove("fixed");
           linkRef.current.classList.remove("scrolledMenu");
         }
-
+  
         if (window.scrollY > 130 && window.innerWidth < 950) {
           upperHeaderRef.current.classList.add("hidden");
         } else {
@@ -62,23 +68,23 @@ export default function Header() {
         }
       }
     };
-
+  
     const handleResize = () => {
       if (window.innerWidth >= 950) {
         upperHeaderRef.current.classList.remove("fixed", "hidden");
       }
     };
-
+  
     window.addEventListener("scroll", handleScrollnew);
     window.addEventListener("resize", handleResize);
     handleScrollnew();
     handleResize();
-
+  
     return () => {
       window.removeEventListener("scroll", handleScrollnew);
       window.removeEventListener("resize", handleResize);
     };
-  }, []);
+  }, [linkRef, upperHeaderRef]);
 
   useGSAP(
     () => {
@@ -129,7 +135,12 @@ export default function Header() {
       document.body.style.overflow = "auto"; // Clean up on unmount
     };
   },[loginModal])
-  // if (!loginModal) return null;
+
+  useEffect(() => {
+    if (isOpened && window.scrollY > 200 && window.innerWidth < 950) {
+      linkRef.current.classList.add("scrolledMenu");
+    }
+  }, [isOpened]);
   return (
     <header className="header" ref={container}>
       <div className="upperHeader" ref={upperHeaderRef}>
@@ -200,7 +211,7 @@ export default function Header() {
             <div className="navLinks" onClick={()=>setDropOpen(!dropDownOpen)}>
               Engage <i class="fa-solid fa-angle-right" style={{transform:`${!dropDownOpen ? 'rotate(90deg)' : 'rotate(-90deg)'}`,color:`${!dropDownOpen ?'black': "#f08a5d"}`}}></i>
             </div>
-              <ul className="dropDownContainer" style={{display:`${dropDownOpen ? 'block': 'none'}` }}>
+              <ul className="dropDownContainer" style={{display:`${dropDownOpen ? 'block': 'none'}`,transition:"all 0.5s" }}>
                 <li>Share Achivements</li>
                 <li>Share Opportunity</li>
               </ul>
