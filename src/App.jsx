@@ -8,11 +8,8 @@ export default function App() {
   
   return (
     <>
-      {/* <PreLoader/> */}
       <Header/>
       <Outlet/>
-      <News/>
-      <Testimonials/>
       <Footer/>
     </>
   )

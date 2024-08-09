@@ -9,6 +9,7 @@ import OurAlumni from './components/OurAlumni/OurAlumni.jsx'
 import UpcomingEvents from './components/UpcomingEvents/UpcomingEvents.jsx'
 import Gallery from './components/Gallery/Gallery.jsx'
 import ContextProvider from './context/Context.jsx'
+import Profile from './components/Profile/Profile.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -18,6 +19,7 @@ const router = createBrowserRouter(
       <Route path='/about-us' element={<AboutUs/>}/>
       <Route path='/event' element={<UpcomingEvents/>}/>
       <Route path='/gallery' element={<Gallery/>}/>
+      <Route path='/profile' element={<Profile/>}/>
     </Route>
   )
 )

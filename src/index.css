@@ -33,6 +33,11 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #f39e79;
 }
+::selection {
+  background: #f08a5d;
+  color: #ffffff;
+}
+
 #root {
   width: 100%;
   min-height: 100%;
@@ -865,7 +870,7 @@ body.menu-open {
   .menuBtnContainer {
     display: block !important;
   }
-  .lkns{
+  .lkns {
     margin-bottom: 25px;
     text-align: center;
   }
@@ -898,7 +903,7 @@ body.menu-open {
   }
   .open {
     right: 0;
-    transition: right .3s ease-in-out;
+    transition: right 0.3s ease-in-out;
   }
 }
 
@@ -1574,11 +1579,10 @@ table {
         margin-bottom: 20px;
 
         &:focus {
-          border: 2px solid #f3f4f6; 
+          border: 2px solid #f3f4f6;
         }
-
       }
-      button{
+      button {
         position: relative;
         padding: 10px 50px;
         background: transparent;
@@ -1586,9 +1590,10 @@ table {
         border: 1px solid #f08a5d;
         font-size: 20px;
         font-weight: 500;
-        transition: background-color .2s ease-in-out, color .2s ease-in-out, transform .2s ease-in-out;
+        transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out,
+          transform 0.2s ease-in-out;
 
-        &:hover{
+        &:hover {
           color: #f3f4f6;
           background-color: #f08a5d;
           transform: scale(1.1);
@@ -1598,7 +1603,7 @@ table {
   }
 }
 
-.modalCloseBtn{
+.modalCloseBtn {
   position: absolute;
   width: 40px;
   height: 40px;
@@ -1611,24 +1616,24 @@ table {
   justify-content: center;
   padding: 5px;
   cursor: pointer;
-  transition: border-color .5s;
+  transition: border-color 0.5s;
 
-  i{
+  i {
     color: #f08a5d;
-    font-size:20px;
-    transition: color .5s, transform 0.2s;
+    font-size: 20px;
+    transition: color 0.5s, transform 0.2s;
   }
 
-  &:hover{
-    border: 2px solid #C40C0C;
+  &:hover {
+    border: 2px solid #c40c0c;
   }
-  &:hover i{
-    color:#C40C0C;
+  &:hover i {
+    color: #c40c0c;
     transform: scale(1.3);
   }
 }
 
-.eyes{
+.eyes {
   position: absolute;
   width: 40px;
   height: 40px;
@@ -1636,6 +1641,203 @@ table {
   top: 90px;
   cursor: pointer;
 }
-.scrolledMenu{
-  top:72px !important
+.scrolledMenu {
+  top: 72px !important;
+}
+
+.profileContainer {
+  position: relative;
+  width: 100%;
+  background: #fff;
+  padding: 30px;
+  border-radius: 15px;
+
+  .profileImageContainer {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    .profileImage {
+      position: relative;
+      width: 300px;
+      height: 300px;
+      background: #f08a5d;
+      padding: 5px;
+      border-radius: 50%;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 3px solid #fff;
+      }
+    }
+    .nameContainer {
+      position: relative;
+      width: 100%;
+      text-align: center;
+      margin-top: 30px;
+
+      p {
+        margin: 0;
+      }
+      .socialMediaIcons {
+        width: 100%;
+        position: relative;
+        margin: 10px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+
+        i {
+          cursor: pointer;
+          display: block;
+          width: 40px;
+          height: 40px;
+          background-color: #e2e2e2;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 18px;
+          transition:  background-color 0.2s linear, color 0.2s linear;
+
+          &:hover{
+            background-color: #f08a5d;
+            color: #f3f4f6;
+          }
+        }
+      }
+    }
+    .summary {
+      position: relative;
+      width: 100%;
+      margin-top: 30px;
+
+      h6 {
+        color: #f08a5d;
+        font-size: 20px;
+      }
+    }
+    .buttonContainer {
+      position: relative;
+      margin-top: 30px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+
+      button {
+        position: relative;
+        padding: 7px 30px;
+        border: 1px solid #f08a5d;
+        background: transparent;
+        color: #f08a5d;
+        font-size: 20px;
+        font-weight: 400;
+
+        &:first-child {
+          background-color: #f08a5d;
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+.profileEditContainer{
+  width: 100%;
+  position: relative;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 15px;
+
+  .profileFormContainer{
+    width: 100%;
+
+
+    .editTitle{
+      width: 100%;
+      text-align: center;
+      margin-bottom: 30px;
+
+      h3{
+        font-weight: 600;
+        text-transform: uppercase;
+        position: relative;
+
+        &::after{
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 3px;
+          background-color: #f08a5d;
+        }
+      }
+    }
+
+    .editForm,form{
+      width: 100%;
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      input,textarea{
+        position: relative;
+        background-color: #f1f1f1;
+        border: none;
+        outline: none;
+        padding: 10px ;
+        font-size: 20px;
+        border-radius: 10px;
+
+        &:first-child,&:nth-child(3),&:nth-child(5),&:nth-child(7){
+          width: 50%;
+        }
+      }
+      .largeInput,textarea{
+        width: 100%;
+      }
+      button{
+        position: relative;
+        padding: 7px 30px;
+        border: 1px solid #f08a5d;
+        background: transparent;
+        color: #f08a5d;
+        font-size: 20px;
+        font-weight: 400;
+        transition: background-color 0.2s,color 0.2s;
+
+        &:hover{
+          background-color: #f08a5d;
+          color: #f1f1f1;
+        }
+      }
+    }
+
+  }
+}
+
+@media (max-width:768px) {
+  .editForm form input{
+    width: 100% !important;
+  }
+}
+@media (max-width:420px) {
+  .socialMediaIcons i{
+    width: 30px !important;
+    height: 30px !important;
+    font-size: 14px !important;
+  }
 }
