@@ -1,7 +1,9 @@
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { NavLink } from "react-router-dom";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import LoginModal from "../LoginModal/LoginModal";
+import { Context } from "../../context/Context";
 
 gsap.registerPlugin(useGSAP);
 
@@ -11,6 +13,7 @@ export default function Header() {
   const container = useRef();
   const upperHeaderRef = useRef();
   const [dropDownOpen,setDropOpen] = useState(false)
+  const {loginModal,setLoginModal} = useContext(Context)
 
   const handleToggle = () => {
     setIsOpened(!isOpened);
@@ -114,7 +117,17 @@ export default function Header() {
     },
     { scope: container }
   );
-
+  useEffect(()=>{
+    if (loginModal) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+    return () => {
+      document.body.style.overflow = "auto"; // Clean up on unmount
+    };
+  },[loginModal])
+  // if (!loginModal) return null;
   return (
     <header className="header" ref={container}>
       <div className="upperHeader" ref={upperHeaderRef}>
@@ -125,7 +138,7 @@ export default function Header() {
           </p>
         </div>
         <div className="btnContainer">
-          <button className="loginBtn">Login</button>
+          <button className="loginBtn" onClick={()=>setLoginModal(true)}>Login</button>
           <div className="menuBtnContainer">
             <button
               id="menuBtns"
@@ -155,7 +168,7 @@ export default function Header() {
             <NavLink
               to="/"
               className={({ isActive }) => (isActive ? "act" : "navLinks")}
-              onClick={() => setIsOpened(false)}
+              onClick={() => {setIsOpened(false);setDropOpen(false)}}
             >
               Home
             </NavLink>
@@ -165,7 +178,7 @@ export default function Header() {
             <NavLink
               to="/about-us"
               className={({ isActive }) => (isActive ? "act" : "navLinks")}
-              onClick={() => setIsOpened(false)}
+              onClick={() => {setIsOpened(false);setDropOpen(false)}}
             >
               About Us
             </NavLink>
@@ -175,7 +188,7 @@ export default function Header() {
             <NavLink
               to="/our-alumni"
               className={({ isActive }) => (isActive ? "act" : "navLinks")}
-              onClick={() => setIsOpened(false)}
+              onClick={() => {setIsOpened(false);setDropOpen(false)}}
             >
               Members
             </NavLink>
@@ -195,7 +208,7 @@ export default function Header() {
             <NavLink
               to="/event"
               className={({ isActive }) => (isActive ? "act" : "navLinks")}
-              onClick={() => setIsOpened(false)}
+              onClick={() => {setIsOpened(false); setDropOpen(false)}}
             >
               Events
             </NavLink>
@@ -205,13 +218,15 @@ export default function Header() {
             <NavLink
               to="/gallery"
               className={({ isActive }) => (isActive ? "act" : "navLinks")}
-              onClick={() => setIsOpened(false)}
+              onClick={() => {setIsOpened(false);setDropOpen(false)}}
             >
               Gallery
             </NavLink>
           </div>
         </div>
       </nav>
+      {loginModal && 
+      <LoginModal/>}
     </header>
   );
 }

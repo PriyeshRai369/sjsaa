@@ -8,6 +8,7 @@ import Home from './components/Home/Home.jsx'
 import OurAlumni from './components/OurAlumni/OurAlumni.jsx'
 import UpcomingEvents from './components/UpcomingEvents/UpcomingEvents.jsx'
 import Gallery from './components/Gallery/Gallery.jsx'
+import ContextProvider from './context/Context.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -22,7 +23,7 @@ const router = createBrowserRouter(
 )
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+  <ContextProvider>
     <RouterProvider router={router}  />
-  </React.StrictMode>,
+  </ContextProvider>,
 )
