@@ -867,7 +867,7 @@ body.menu-open {
   }
   .linksContainer {
     position: absolute !important;
-    top: 80px;
+    top: 5px;
     right: -100%;
     background-color: black;
     flex-direction: column;
@@ -1630,4 +1630,7 @@ table {
   right: 10px;
   top: 90px;
   cursor: pointer;
+}
+.scrolledMenu{
+  top:80px !important
 }

@@ -14,7 +14,7 @@ export default function Header() {
   const upperHeaderRef = useRef();
   const [dropDownOpen,setDropOpen] = useState(false)
   const {loginModal,setLoginModal} = useContext(Context)
-
+  const linkRef = useRef()
   const handleToggle = () => {
     setIsOpened(!isOpened);
   };
@@ -49,8 +49,10 @@ export default function Header() {
       if (upperHeaderRef.current) {
         if (window.scrollY > 200 && window.innerWidth < 950) {
           upperHeaderRef.current.classList.add("fixed");
+          linkRef.current.classList.add("scrolledMenu")
         } else {
           upperHeaderRef.current.classList.remove("fixed");
+          linkRef.current.classList.remove("scrolledMenu");
         }
 
         if (window.scrollY > 130 && window.innerWidth < 950) {
@@ -163,7 +165,7 @@ export default function Header() {
         </div>
       </div>
       <nav className="nav" ref={headerRef}>
-        <div className={`linksContainer ${isOpened ? "open" : ""}`}>
+        <div className={`linksContainer ${isOpened ? "open" : ""}`} ref={linkRef}>
           <div className="lkns">
             <NavLink
               to="/"
