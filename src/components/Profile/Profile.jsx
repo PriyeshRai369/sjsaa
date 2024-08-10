@@ -8,6 +8,9 @@ export default function Profile() {
           <div className="col-lg-5">
             <div className="profileContainer">
               <div className="profileImageContainer">
+                <div className="profileBanner" style={{backgroundImage:"url('/images/profile-banner/profile-banner.jpg')"}}>
+
+                </div>
                 <div className="profileImage">
                   <img src="/images/faculity/02.jpg" alt="" />
                 </div>
@@ -65,6 +68,10 @@ export default function Profile() {
                   <input className="largeInput" type="text" placeholder="My Profession" />
                   <input className="largeInput" type="text" placeholder="My Address" />
                   <textarea name="aboutme" id="" placeholder="About Me"></textarea>
+                  <label htmlFor="profile">Upload Profile Pic</label>
+                  <input id="profile" className="largeInput" type="file" />
+                  <label htmlFor="banner">Upload Banner Image</label>
+                  <input id="banner" className="largeInput" type="file" />
 
                   <button>Edit</button>
                   <button type="submit">Save</button>

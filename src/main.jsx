@@ -11,6 +11,7 @@ import Gallery from './components/Gallery/Gallery.jsx'
 import ContextProvider from './context/Context.jsx'
 import Profile from './components/Profile/Profile.jsx'
 import NotFoundPage from './components/NotFound/NotFoundPage.jsx'
+import UserProfile from './components/UserProfile/UserProfile.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -21,6 +22,7 @@ const router = createBrowserRouter(
       <Route path='/event' element={<UpcomingEvents/>}/>
       <Route path='/gallery' element={<Gallery/>}/>
       <Route path='/profile' element={<Profile/>}/>
+      <Route path='/user/profile' element={<UserProfile/>}/>
       <Route path='*' element={<NotFoundPage/>}/>
     </Route>
   )

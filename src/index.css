@@ -1649,7 +1649,6 @@ table {
   position: relative;
   width: 100%;
   background: #fff;
-  padding: 30px;
   border-radius: 15px;
 
   .profileImageContainer {
@@ -1660,27 +1659,39 @@ table {
     justify-content: center;
     flex-direction: column;
 
+    .profileBanner{
+      width: 100%;
+    height: 200px;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 15px 15px 0 0;
+    }
+
     .profileImage {
-      position: relative;
-      width: 300px;
-      height: 300px;
-      background: #f08a5d;
-      padding: 5px;
+      position: absolute;
+      width: 140px;
+      height: 140px;
+      background: #ffffff;
+      padding: 3px;
       border-radius: 50%;
+      top: 120px;
+      left: 30px;
 
       img {
         width: 100%;
         height: 100%;
         object-fit: cover;
         border-radius: 50%;
-        border: 3px solid #fff;
+        border: 1px solid #000000;
       }
     }
     .nameContainer {
+      padding: 25px;
       position: relative;
       width: 100%;
-      text-align: center;
-      margin-top: 30px;
+      margin-top: 50px;
 
       p {
         margin: 0;
@@ -1691,7 +1702,6 @@ table {
         margin: 10px 0;
         display: flex;
         align-items: center;
-        justify-content: center;
         gap: 20px;
 
         i {
@@ -1705,9 +1715,9 @@ table {
           align-items: center;
           justify-content: center;
           font-size: 18px;
-          transition:  background-color 0.2s linear, color 0.2s linear;
+          transition: background-color 0.2s linear, color 0.2s linear;
 
-          &:hover{
+          &:hover {
             background-color: #f08a5d;
             color: #f3f4f6;
           }
@@ -1717,7 +1727,7 @@ table {
     .summary {
       position: relative;
       width: 100%;
-      margin-top: 30px;
+      padding: 25px;
 
       h6 {
         color: #f08a5d;
@@ -1726,12 +1736,12 @@ table {
     }
     .buttonContainer {
       position: relative;
-      margin-top: 30px;
       width: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 30px;
+      padding: 25px;
 
       button {
         position: relative;
@@ -1751,29 +1761,28 @@ table {
   }
 }
 
-.profileEditContainer{
+.profileEditContainer {
   width: 100%;
   position: relative;
   background-color: #fff;
   padding: 30px;
   border-radius: 15px;
 
-  .profileFormContainer{
+  .profileFormContainer {
     width: 100%;
 
-
-    .editTitle{
+    .editTitle {
       width: 100%;
       text-align: center;
       margin-bottom: 30px;
 
-      h3{
+      h3 {
         font-weight: 600;
         text-transform: uppercase;
         position: relative;
 
-        &::after{
-          content: '';
+        &::after {
+          content: "";
           position: absolute;
           bottom: 0;
           left: 0;
@@ -1784,7 +1793,8 @@ table {
       }
     }
 
-    .editForm,form{
+    .editForm,
+    form {
       width: 100%;
       position: relative;
       display: flex;
@@ -1793,23 +1803,28 @@ table {
       justify-content: center;
       flex-wrap: wrap;
 
-      input,textarea{
+      input,
+      textarea {
         position: relative;
         background-color: #f1f1f1;
         border: none;
         outline: none;
-        padding: 10px ;
+        padding: 10px;
         font-size: 20px;
         border-radius: 10px;
 
-        &:first-child,&:nth-child(3),&:nth-child(5),&:nth-child(7){
+        &:first-child,
+        &:nth-child(3),
+        &:nth-child(5),
+        &:nth-child(7) {
           width: 50%;
         }
       }
-      .largeInput,textarea{
+      .largeInput,
+      textarea {
         width: 100%;
       }
-      button{
+      button {
         position: relative;
         padding: 7px 30px;
         border: 1px solid #f08a5d;
@@ -1817,27 +1832,139 @@ table {
         color: #f08a5d;
         font-size: 20px;
         font-weight: 400;
-        transition: background-color 0.2s,color 0.2s;
+        transition: background-color 0.2s, color 0.2s;
 
-        &:hover{
+        &:hover {
           background-color: #f08a5d;
           color: #f1f1f1;
         }
       }
     }
-
   }
 }
 
-@media (max-width:768px) {
-  .editForm form input{
+@media (max-width: 768px) {
+  .editForm form input {
     width: 100% !important;
   }
 }
-@media (max-width:420px) {
-  .socialMediaIcons i{
+@media (max-width: 420px) {
+  .socialMediaIcons i {
     width: 30px !important;
     height: 30px !important;
     font-size: 14px !important;
   }
+}
+
+.userProfileContainer {
+  position: relative;
+  width: 100%;
+  background: #fff;
+  border-radius: 15px;
+
+  .profileBannerContainer {
+    width: 100%;
+    height: 200px;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 15px 15px 0 0;
+    /* img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    } */
+  }
+  .userProfilePic {
+    position: absolute;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background: #fff;
+    left: 40px;
+    top: 110px;
+    padding: 4px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 2px solid black;
+    }
+  }
+  .userNameContainer {
+    position: relative;
+    width: 100%;
+    margin-top: 50px;
+    padding: 30px;
+    p {
+      margin: 0;
+    }
+    .socialMediaIcons {
+      width: 100%;
+      position: relative;
+      margin: 10px 0;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      i {
+        cursor: pointer;
+        display: block;
+        width: 35px;
+        height: 35px;
+        background-color: #e2e2e2;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        transition: background-color 0.2s linear, color 0.2s linear;
+
+        &:hover {
+          background-color: #f08a5d;
+          color: #f3f4f6;
+        }
+      }
+    }
+  }
+  .summary {
+    position: relative;
+    width: 100%;
+
+    h6 {
+      color: #f08a5d;
+      font-size: 20px;
+    }
+  }
+  .buttonContainer {
+    position: relative;
+    margin-top: 30px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    button {
+      position: relative;
+      padding: 7px 30px;
+      border: 1px solid #f08a5d;
+      background: transparent;
+      color: #f08a5d;
+      font-size: 20px;
+      font-weight: 400;
+
+      &:first-child {
+        background-color: #f08a5d;
+        color: white;
+      }
+    }
+  }
+}
+
+label{
+  width: 100%;
+  text-align: left;
 }
