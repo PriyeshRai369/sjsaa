@@ -4,6 +4,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import LoginModal from "../LoginModal/LoginModal";
 import { Context } from "../../context/Context";
+import { scrollToTop } from "../../helper/scroll.js";
 
 gsap.registerPlugin(useGSAP);
 
@@ -168,7 +169,7 @@ export default function Header() {
         </div>
       </div> */}
       <nav className="nav" ref={headerRef}>
-        <div className="logoContainer">
+        <div className="logoContainer" onClick={scrollToTop} >
           <Link to={"/"}>
             <p>
               <span className="logoText">St John&apos;s School</span>
@@ -187,6 +188,7 @@ export default function Header() {
               onClick={() => {
                 setIsOpened(false);
                 setDropOpen(false);
+                scrollToTop();
               }}
             >
               Home
@@ -200,6 +202,7 @@ export default function Header() {
               onClick={() => {
                 setIsOpened(false);
                 setDropOpen(false);
+                scrollToTop();
               }}
             >
               About Us
@@ -213,6 +216,7 @@ export default function Header() {
               onClick={() => {
                 setIsOpened(false);
                 setDropOpen(false);
+                scrollToTop();
               }}
             >
               Members
@@ -254,6 +258,7 @@ export default function Header() {
               onClick={() => {
                 setIsOpened(false);
                 setDropOpen(false);
+                scrollToTop();
               }}
             >
               Events
@@ -267,6 +272,7 @@ export default function Header() {
               onClick={() => {
                 setIsOpened(false);
                 setDropOpen(false);
+                scrollToTop();
               }}
             >
               Gallery
