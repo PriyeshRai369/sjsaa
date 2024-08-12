@@ -1,4 +1,5 @@
 import React from "react";
+import Fancybox from "../ImageZoom/Fancybox";
 
 export default function Achievers() {
   return (
@@ -12,27 +13,35 @@ export default function Achievers() {
             <div className="achieversContainer">
               <div className="row">
                 <div className="col-lg-3 col-md-4 col-12">
-                  <div className="achieveImg">
-                    <img src="/images/invitation.jpg" alt="" />
-                  </div>
+                  <Fancybox>
+                    <div
+                      className="achieveImg"
+                      data-fancybox="gallery"
+                      href="/images/invitation.jpg"
+                    >
+                      <img src="/images/invitation.jpg" alt="" />
+                    </div>
+                  </Fancybox>
                 </div>
                 <div className="col-lg-9 col-md-8 col-12">
-                <h2>
-                Proud moment for us. Because of XJ Sanjeeva Singh 1982 Batch.
-              </h2>
-              <p>
-                We are thrilled to announce that our esteemed alumnus, Mr.
-                Sanjeeva Singh, has been nominated to receive the "Champions for
-                Change" Award at the Paris Olympic Games on August 10th, 2024.
-                This prestigious award, presented by the University of London,
-                honours his remarkable contributions and dedication to the sport
-                of archery. Mr. Singh will be joined by his batchmates, Gurdeep
-                Pal and Sunil Lala, making this momentous occasion even more
-                special. We extend our heartfelt congratulations and best wishes
-                to Mr. Singh for this well-deserved recognition. Let's celebrate
-                this incredible achievement and cheer for Mr. Singh as he
-                continues to inspire and uplift the sports community!
-              </p>
+                  <h2>
+                    Proud moment for us. Because of XJ Sanjeeva Singh 1982
+                    Batch.
+                  </h2>
+                  <p>
+                    We are thrilled to announce that our esteemed alumnus, Mr.
+                    Sanjeeva Singh, has been nominated to receive the "Champions
+                    for Change" Award at the Paris Olympic Games on August 10th,
+                    2024. This prestigious award, presented by the University of
+                    London, honours his remarkable contributions and dedication
+                    to the sport of archery. Mr. Singh will be joined by his
+                    batchmates, Gurdeep Pal and Sunil Lala, making this
+                    momentous occasion even more special. We extend our
+                    heartfelt congratulations and best wishes to Mr. Singh for
+                    this well-deserved recognition. Let's celebrate this
+                    incredible achievement and cheer for Mr. Singh as he
+                    continues to inspire and uplift the sports community!
+                  </p>
                 </div>
               </div>
             </div>
