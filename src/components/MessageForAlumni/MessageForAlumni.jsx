@@ -10,12 +10,12 @@ export default function MessageForAlumni() {
             <div className="messageContainer">
               <div className="messageImgContainer">
                 <div className="profilePic shine">
-                  <img src="/images/faculity/01.jpg" alt="" />
+                  <img src="/images/managing/chairman.jpg" alt="" />
                 </div>
               </div>
               <div className="name">
-                <h5>Mr. Robert</h5>
-                <p>Principal</p>
+                <h5>XJ RAJKUMAR AGRAWAL</h5>
+                <p>CHAIRMAN</p>
               </div>
               <div className="theirMessage">
                 <p>
@@ -29,12 +29,12 @@ export default function MessageForAlumni() {
             <div className="messageContainer">
               <div className="messageImgContainer">
                 <div className="profilePic shine">
-                  <img src="/images/faculity/02.jpg" alt="" />
+                  <img src="/images/managing/President.png" alt="" />
                 </div>
               </div>
               <div className="name">
-                <h5>Mrs. Angla Yu</h5>
-                <p>Principal</p>
+                <h5>XJ ABHINAV PANDEY</h5>
+                <p>PRESIDENT</p>
               </div>
               <div className="theirMessage">
                 <p>
