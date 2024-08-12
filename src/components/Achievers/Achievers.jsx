@@ -8,7 +8,7 @@ export default function Achievers() {
         <div className="title">
           <h1>Our Achievers</h1>
         </div>
-        <div className="row">
+        <div className="row row-gap-5">
           <div className="col-lg-12">
             <div className="achieversContainer">
               <div className="row">
@@ -41,6 +41,36 @@ export default function Achievers() {
                     this well-deserved recognition. Let's celebrate this
                     incredible achievement and cheer for Mr. Singh as he
                     continues to inspire and uplift the sports community!
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="col-lg-12">
+            <div className="achieversContainer">
+              <div className="row">
+                <div className="col-lg-3 col-md-4 col-12">
+                  <Fancybox>
+                    <div
+                      className="achieveImg"
+                      data-fancybox="gallery"
+                      href="/images/achievers/01.jpg"
+                    >
+                      <img src="/images/achievers/01.jpg" alt="" />
+                    </div>
+                  </Fancybox>
+                </div>
+                <div className="col-lg-9 col-md-8 col-12">
+                  <h2>
+                    Dainik Jagran Achiever Award was given to XJ Manoj Kumar Shah
+                  </h2>
+                  <p>
+                    Happy to inform that Dainik Jagran Achiever Award was given
+                    to XJ Manoj Kumar Shah in the Healthcare Category and to his
+                    wife Dr Shalini Shah in the Education & Women Empowerment
+                    Category. <br /> This award was given at the annual celebration
+                    organized by Jagran at Baku, Azerbaijan last evening.
                   </p>
                 </div>
               </div>
