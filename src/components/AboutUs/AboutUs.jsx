@@ -9,20 +9,52 @@ export default function AboutUs() {
         <div className="title">
           <h1>About Us</h1>
         </div>
-        <div className="row row-gap-4">
-          <div className="col-lg-7">
+        <div className="row">
+          <div className="col-lg-12">
             <div className="aboutContainer">
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore,
-                sequi ullam adipisci, eligendi itaque libero numquam in
-                blanditiis debitis, officia ipsam? Adipisci illo odio dolor,
-                voluptatum pariatur suscipit fugit saepe velit? Dignissimos quas
-                illo magni porro. Vel laborum quas nemo eum quisquam est,
-                officia suscipit harum obcaecati accusantium fuga ad?
-              </p>
+              <div className="row row-gap-2">
+                <div className="col-lg-8">
+                  <h3>Who are we</h3>
+                  <p>
+                    Welcome to the St John's School Alumni Association, a
+                    vibrant community that brings together generations of proud
+                    graduates from St John's School, B.L.W, Varanasi. Since its
+                    inception in 1963, St John's School has been a beacon of
+                    academic excellence and holistic development, shaping the
+                    lives of countless students who have gone on to excel in
+                    various fields. The Alumni Association, established to
+                    foster lifelong connections among these accomplished
+                    individuals, serves as a bridge between the school's rich
+                    past and its promising future. Even after 40 years of
+                    leaving the school, many of our alumni remain actively
+                    involved, demonstrating their enduring commitment to the
+                    values and camaraderie instilled during their formative
+                    years.
+                    <br />
+                    <br />
+                    In 2024, as we celebrate over six decades of the
+                    school's legacy, the St John's School Alumni Association
+                    stands as a testament to the strong bonds forged within its
+                    walls. Our members, spanning across multiple generations,
+                    contribute to a thriving network that supports not only each
+                    other but also the ongoing growth and success of the school.
+                    Through various initiatives, events, and mentorship
+                    programs, the association continues to play a vital role in
+                    nurturing the next generation of leaders, while also
+                    providing a platform for alumni to reconnect, share
+                    experiences, and give back to the institution that has
+                    played such a significant role in their lives.
+                  </p>
+                </div>
+                <div className="col-lg-4">
+                  <div className="aboutImageContainer">
+                  <img src="/images/aboutUs.png" />
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <div className="col-lg-5">
+          {/* <div className="col-lg-5">
             <div className="eventsContainer">
               <div className="eventTitle">
                 <h4>Upcoming Events</h4>
@@ -70,7 +102,7 @@ export default function AboutUs() {
               </div>
               <button className="viewMoreBtn">View More Events</button>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

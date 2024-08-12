@@ -6,34 +6,54 @@ export default function Stories() {
           <h1>Gallery</h1>
         </div>
         <div className="row row-gap-5">
-          <div className="col-lg-4 col-md-6 col-sm-12">
+          <div className="col-lg-3 col-md-4 col-sm-6 col-6">
             <div className="storyImgContainer">
-              <img src="/images/party/party_01.jpg" alt="" />
+              <img src="/images/party/01.jpeg" alt="" />
             </div>
           </div>
-          <div className="col-lg-4 col-md-6 col-sm-12">
+          <div className="col-lg-3 col-md-4 col-sm-6 col-6">
             <div className="storyImgContainer">
-              <img src="/images/party/party_02.jpg" alt="" />
+              <img src="/images/party/02.jpeg" alt="" />
             </div>
           </div>
-          <div className="col-lg-4 col-md-6 col-sm-12">
+          <div className="col-lg-3 col-md-4 col-sm-6 col-6">
             <div className="storyImgContainer">
-              <img src="/images/party/party_03.jpg" alt="" />
+              <img src="/images/party/03.jpeg" alt="" />
             </div>
           </div>
-          <div className="col-lg-4 col-md-6 col-sm-12">
+          <div className="col-lg-3 col-md-4 col-sm-6 col-6">
             <div className="storyImgContainer">
-              <img src="/images/party/party_04.jpg" alt="" />
+              <img src="/images/party/04.jpeg" alt="" />
             </div>
           </div>
-          <div className="col-lg-4 col-md-6 col-sm-12">
+          <div className="col-lg-3 col-md-4 col-sm-6 col-6">
             <div className="storyImgContainer">
-              <img src="/images/party/party_05.jpg" alt="" />
+              <img src="/images/party/05.jpeg" alt="" />
             </div>
           </div>
-          <div className="col-lg-4 col-md-6 col-sm-12">
+          <div className="col-lg-3 col-md-4 col-sm-6 col-6">
             <div className="storyImgContainer">
-              <img src="/images/party/party_06.jpg" alt="" />
+              <img src="/images/party/06.jpeg" alt="" />
+            </div>
+          </div>
+          <div className="col-lg-3 col-md-4 col-sm-6 col-6">
+            <div className="storyImgContainer">
+              <img src="/images/party/07.jpeg" alt="" />
+            </div>
+          </div>
+          <div className="col-lg-3 col-md-4 col-sm-6 col-6">
+            <div className="storyImgContainer">
+              <img src="/images/party/08.jpeg" alt="" />
+            </div>
+          </div>
+          <div className="col-lg-3 col-md-4 col-sm-6 col-6">
+            <div className="storyImgContainer">
+              <img src="/images/party/09.jpeg" alt="" />
+            </div>
+          </div>
+          <div className="col-lg-3 col-md-4 col-sm-6 col-6">
+            <div className="storyImgContainer">
+              <img src="/images/party/10.jpeg" alt="" />
             </div>
           </div>
         </div>

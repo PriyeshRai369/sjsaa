@@ -6,12 +6,11 @@
   text-decoration: none;
   list-style: none;
   font-family: "Montserrat", sans-serif;
-
-  /* --third-color: ""; */
-}
-:root {
-  --primary-color: "#171717";
-  --secondry-color: "#f3f4f6";
+  --primary-color: #171717;
+  --secondry-color: #212121;
+  --third-color: #fab341;
+  --text-color: #f3f4f6;
+  --used-color: #f08a5d;
 }
 html,
 body {
@@ -23,19 +22,19 @@ body {
 }
 ::-webkit-scrollbar-track {
   border-radius: 10px;
-  background: #dadada;
+  background: var(--text-color);
 }
 ::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  background: #f08a5d;
+  background: var(--third-color);
   cursor: pointer;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #f39e79;
+  background: var(--secondry-color);
 }
 ::selection {
-  background: #f08a5d;
-  color: #ffffff;
+  background: var(--third-color);
+  color: var(--primary-color);
 }
 
 #root {
@@ -43,7 +42,7 @@ body {
   min-height: 100%;
   text-decoration: none;
   overflow: hidden;
-  background-color: #eeeeee;
+  background-color: var(--primary-color);
 }
 body {
   overflow-x: hidden !important;
@@ -54,6 +53,7 @@ body {
   position: relative;
   top: 0;
   z-index: 999;
+  background-color: black;
 
   .nav {
     width: 100%;
@@ -61,7 +61,38 @@ body {
     padding: 20px 100px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+
+    .logoContainer {
+      width: 250px;
+      text-align: center;
+
+      p {
+        color: var(--text-color);
+        font-weight: 700;
+        margin: 0;
+        font-size: 19.7px;
+        line-height: 22px;
+        text-transform: uppercase;
+
+        .logoText {
+          font-size: 22px;
+          display: inline-block;
+
+          span {
+            display: inline-block;
+          }
+        }
+        .secondLogo {
+          display: inline-block;
+        }
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
 
     .linksContainer {
       position: relative;
@@ -77,7 +108,7 @@ body {
           width: 100%;
           height: 100%;
           position: relative;
-          color: var(--primary-color);
+          color: var(--text-color);
           text-decoration: none;
           font-weight: 400;
           padding: 5px 15px;
@@ -92,9 +123,9 @@ body {
             left: 0;
             width: 0;
             height: 3px;
-            background-color: #171717;
+            background-color: var(--third-color);
             border-radius: 20px;
-            transition: width 0.5s linear;
+            transition: width 0.5s cubic-bezier(1, 0, 0, 1);
           }
           &:hover::after {
             width: 100%;
@@ -111,7 +142,7 @@ body {
           padding: 5px 15px;
           border-radius: 30px;
           transition: all 0.3s linear;
-          background-color: #171717;
+          background-color: var(--third-color);
         }
       }
     }
@@ -138,10 +169,9 @@ body {
   top: 0 !important;
   left: 0 !important;
   width: 100% !important;
-  background-color: white;
+  background-color: black;
   backdrop-filter: blur(10px);
   z-index: 1000;
-  border-bottom: 1px solid black;
   transition: top 0.6s ease-in-out;
 }
 
@@ -154,8 +184,8 @@ body {
   .loginBtn {
     padding: 5px 20px;
     background-color: transparent;
-    border: 1px solid #171717;
-    color: #171717;
+    border: 1px solid var(--text-color);
+    color: var(--text-color);
     border-radius: 30px;
     font-size: 20px;
     font-weight: 500;
@@ -164,7 +194,8 @@ body {
 
     &:hover {
       color: #f3f4f6;
-      background-color: #171717;
+      background-color: var(--third-color);
+      border-color: var(--third-color);
     }
     &:active {
       transform: scale(0.8);
@@ -188,14 +219,14 @@ body {
 .title > h1 {
   position: relative;
   width: fit-content;
-  color: #171717;
+  color: var(--text-color);
 }
 .title > h1::after {
   content: "";
   position: absolute;
   width: 40%;
   height: 3px;
-  background-color: #f08a5d;
+  background-color: var(--third-color);
   bottom: -5px;
   left: 0;
   border-radius: 20px;
@@ -208,7 +239,7 @@ body {
   border-radius: 10px;
   cursor: pointer;
   padding: 25px;
-  background-color: #fff;
+  background-color: var(--secondry-color);
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -232,7 +263,7 @@ body {
       object-position: top;
       transition: all 0.1s linear;
       border-radius: 50%;
-      border: 5px solid #fff;
+      border: 5px solid var(--secondry-color);
     }
     &:hover.shine::before {
       animation: shine 1s;
@@ -363,12 +394,12 @@ body {
 
 .eventContainer {
   position: relative;
-  background-color: #fff;
+  background-color: var(--secondry-color);
   width: 100%;
   height: 100%;
   padding: 20px 30px;
   border-radius: 10px;
-  color: #171717;
+  color: var(--text-color);
 
   p {
     margin: 0;
@@ -376,7 +407,7 @@ body {
   }
   h2 {
     font-size: 5rem;
-    color: #f08a5d;
+    color: var(--third-color);
   }
 
   .heading {
@@ -384,7 +415,7 @@ body {
     width: fit-content;
 
     a {
-      color: #171717;
+      color: var(--text-color);
       text-decoration: none;
       transition: color 0.3s;
 
@@ -398,7 +429,7 @@ body {
       }
 
       &:hover {
-        color: #f08a5d;
+        color: var(--third-color);
       }
 
       &:hover i {
@@ -408,35 +439,11 @@ body {
   }
 }
 
-.eventDate {
-  position: relative;
-
-  p i {
-    margin-right: 20px;
-    font-size: 1.5rem;
-  }
-  p {
-    font-size: 1rem;
-  }
-}
-
-.location {
-  position: relative;
-
-  p i {
-    margin-right: 20px;
-    font-size: 1.5rem;
-  }
-  p {
-    font-size: 1rem;
-  }
-}
-
 .viewMoreBtn {
   padding: 15px 30px;
   background-color: transparent;
-  color: #f08a5d;
-  border: 1px solid #f08a5d;
+  color: var(--third-color);
+  border: 1px solid var(--third-color);
   font-size: 1.3rem;
   font-weight: 500;
   position: relative;
@@ -445,8 +452,8 @@ body {
   transition: all 0.5s;
 
   &:hover {
-    border: 1px solid #171717;
-    background-color: #171717;
+    border: 1px solid var(--third-color);
+    background-color: var(--third-color);
     color: #d1d5db;
     transform: translateX(-50%) scale(1.15);
     border-radius: 50px;
@@ -458,7 +465,7 @@ body {
   height: 250px;
   position: relative;
   text-align: center;
-  background-color: #fff;
+  background-color: var(--secondry-color);
   border-radius: 15px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
   overflow: hidden;
@@ -482,9 +489,8 @@ body {
 .visionContainer {
   width: 100%;
   padding: 20px;
-  background-color: #fff;
+  background-color: var(--secondry-color);
   border-radius: 10px;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
 
   .title h1 {
     left: 50%;
@@ -497,9 +503,7 @@ body {
     padding: 20px;
 
     p {
-      color: #171717;
-      font-size: 1.3rem;
-      font-weight: 500;
+      color: var(--text-color);
     }
   }
 
@@ -538,9 +542,8 @@ body {
   width: 100%;
   position: relative;
   padding: 25px;
-  background-color: #fff;
+  background-color: var(--secondry-color);
   border-radius: 10px;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
 
   .messageImgContainer {
     width: 100%;
@@ -554,11 +557,10 @@ body {
       height: 160px;
       width: 160px;
       position: relative;
-      padding: 5px;
       border-radius: 50%;
       overflow: hidden;
-      background-color: #f08a5d;
-      padding: 3px;
+      background-color: var(--text-color);
+      padding: 2px;
 
       img {
         height: 100%;
@@ -566,7 +568,7 @@ body {
         object-fit: cover;
         object-position: center;
         border-radius: 50%;
-        border: 3px solid #fff;
+        border: 3px solid var(--primary-color);
       }
       &:hover.shine::before {
         animation: shine 1s;
@@ -579,14 +581,14 @@ body {
     position: relative;
     margin-top: 15px;
     h5 {
-      color: #f08a5d;
+      color: var(--third-color);
       font-size: 1.6rem;
       font-weight: 600;
       margin: 0;
     }
 
     p {
-      color: #171717;
+      color: var(--text-color);
     }
   }
   .theirMessage {
@@ -595,10 +597,9 @@ body {
     position: relative;
     padding: 20px;
     border-radius: 10px;
-    background-color: rgb(238 238 238);
-    box-shadow: rgb(0 0 0 / 23%) 0px 2px 8px;
+    background-color: var(--primary-color);
     p {
-      color: #171717;
+      color: var(--text-color);
       margin: 0;
     }
   }
@@ -607,9 +608,8 @@ body {
 .newsContainer {
   width: 100%;
   position: relative;
-  background-color: #fff;
+  background-color: var(--secondry-color);
   border-radius: 10px;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
 
   .newsImageContainer {
     width: 100%;
@@ -632,7 +632,7 @@ body {
 
     p a {
       font-size: 15px;
-      color: #f08a5d;
+      color: var(--third-color);
       margin: 0;
       text-decoration: none;
       position: relative;
@@ -654,7 +654,7 @@ body {
 
     p {
       margin: 0;
-      color: #171717;
+      color: var(--text-color);
       font-size: 13px;
     }
   }
@@ -662,7 +662,7 @@ body {
 
 .rdMore {
   font-size: 16px;
-  color: #f08a5d;
+  color: var(--third-color);
   cursor: pointer;
   font-weight: 500;
 }
@@ -672,7 +672,7 @@ body {
   position: relative;
   padding: 20px;
   border-radius: 10px;
-  background-color: #fff;
+  background-color: var(--secondry-color);
   /* box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px; */
 
   .image-box {
@@ -748,7 +748,7 @@ body {
   width: 100%;
   padding: 50px;
   padding-bottom: 20px;
-  background-color: #f08a5d;
+  background-color: var(--secondry-color);
   margin-top: 50px;
 }
 .footerLogoContainer {
@@ -759,13 +759,15 @@ body {
     width: 170px;
     object-fit: cover;
     object-position: center;
+    transform: scaleY(1.4);
+    margin-bottom: 30px;
   }
 
   p {
-    color: #ffffff;
+    color: var(--text-color);
   }
   h3 {
-    color: #ffffff;
+    color: var(--text-color);
   }
   .footerSocialMedia {
     position: relative;
@@ -776,7 +778,7 @@ body {
     .footerIcon {
       height: 50px;
       width: 50px;
-      border: 1px solid #ffffff;
+      border: 1px solid var(--secondry-color) fff;
       padding: 10px;
       display: flex;
       align-items: center;
@@ -792,12 +794,12 @@ body {
 
   h3 {
     margin-top: 50px;
-    color: #ffffff;
+    color: var(--third-color);
     margin-bottom: 40px;
     font-size: 25px;
   }
   p {
-    color: #ffffff;
+    color: var(--text-color);
   }
   ul {
     display: flex;
@@ -819,7 +821,7 @@ body {
       position: absolute;
       width: 0;
       height: 3px;
-      background-color: #f08a5d;
+      background-color: var(--third-color);
       left: 0;
       bottom: -3px;
       z-index: 999;
@@ -837,7 +839,7 @@ body {
 
 .mobNo {
   position: relative;
-  color: #ffffff;
+  color: var(--text-color);
   top: -20px;
   font-weight: 500;
 }
@@ -852,10 +854,10 @@ body {
 
   p {
     margin: 0;
-    color: #ffffff;
+    color: var(--text-color);
 
     span {
-      color: #f08a5d;
+      color: var(--third-color);
     }
   }
 }
@@ -865,7 +867,7 @@ body.menu-open {
 
 @media (max-width: 950px) {
   .nav {
-    padding: 0 !important;
+    padding: 15px !important;
   }
   .menuBtnContainer {
     display: block !important;
@@ -876,7 +878,7 @@ body.menu-open {
   }
   .linksContainer {
     position: absolute !important;
-    top: 0px;
+    top: 80px;
     right: -100%;
     background-color: black;
     display: block !important;
@@ -887,9 +889,9 @@ body.menu-open {
     padding: 40px 30px;
     .navLinks {
       padding: 7px 50px !important;
-      border: 1px solid #f08a5d;
+      border: 1px solid var(--third-color);
       font-size: 1.6rem !important;
-      color: #f08a5d !important;
+      color: var(--third-color) !important;
 
       &::after {
         display: none;
@@ -898,7 +900,7 @@ body.menu-open {
     .act {
       font-size: 1.9rem !important;
       padding: 7px 50px !important;
-      background: #f08a5d !important;
+      background: var(--third-color) !important;
     }
   }
   .open {
@@ -910,6 +912,7 @@ body.menu-open {
 .menuBtnContainer {
   display: none;
 }
+
 .menu {
   background-color: transparent;
   border: none;
@@ -919,7 +922,7 @@ body.menu-open {
 }
 .line {
   fill: none;
-  stroke: rgb(19, 19, 19);
+  stroke: var(--text-color);
   stroke-width: 6;
   transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
     stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -953,9 +956,6 @@ body.menu-open {
 }
 
 @media (max-width: 668px) {
-  .nav {
-    padding: 0 !important;
-  }
   .upperHeader {
     padding: 10px 50px !important;
   }
@@ -985,9 +985,6 @@ body.menu-open {
 }
 
 @media (max-width: 480px) {
-  .nav {
-    padding: 0 !important;
-  }
   .upperHeader {
     padding: 10px 20px !important;
   }
@@ -1053,19 +1050,19 @@ body.menu-open {
 }
 
 table {
-  background-color: #fff !important;
+  background-color: var(--secondry-color) !important;
   text-align: center;
   border-collapse: collapse;
-  color: #171717;
+  
 
   th,
   td {
-    color: #171717;
+    color: var(--text-color);
     padding: 10px;
-    border: 1px solid #f08a5d;
+    border: 1px solid var(--third-color);
   }
   thead {
-    background-color: #f08a5d;
+    background-color: var(--third-color);
   }
 }
 
@@ -1078,9 +1075,9 @@ table {
   box-sizing: border-box;
 }
 .p-paginator {
-  background: #ffffffde;
+  background: var(--secondry-color) fffde;
   color: #6b7280;
-  border: solid #f3f4f6;
+  border:1px solid var(--third-color);
   border-width: 0;
   padding: 0.5rem 1rem;
   border-radius: 6px;
@@ -1160,14 +1157,14 @@ table {
   font-weight: normal;
 }
 .p-paginator .p-paginator-pages .p-paginator-page.p-highlight {
-  background: #f08a5d;
-  border-color: #eef2ff;
-  color: black;
+  background: var(--third-color);
+  /* border-color: var(--text-color); */
+  color: var(--primary-color);
 }
 .p-paginator .p-paginator-pages .p-paginator-page {
   background-color: transparent;
   border: 0 none;
-  color: #f39e79;
+  color: var(--third-color);
   min-width: 3rem;
   height: 3rem;
   margin: 0.143rem;
@@ -1235,10 +1232,10 @@ table {
   font-family: var(--font-family);
   font-feature-settings: var(--font-feature-settings, normal);
   font-size: 1rem;
-  color: #171717;
-  background: #f08a5d;
+  color: var(--primary-color);
+  background: var(--third-color);
   padding: 0.75rem 0.75rem;
-  border: 1px solid #d1d5db;
+  /* border: 1px solid #d1d5db; */
   transition: background-color 0.2s, color 0.2s, border-color 0.2s,
     box-shadow 0.2s;
   appearance: none;
@@ -1256,7 +1253,7 @@ table {
 }
 .p-dropdown .p-dropdown-trigger {
   background: transparent;
-  color: #6b7280;
+  color: var(--primary-color);
   width: 3rem;
   border-top-right-radius: 6px;
   border-bottom-right-radius: 6px;
@@ -1268,8 +1265,8 @@ table {
   flex-shrink: 0;
 }
 .p-dropdown-panel {
-  background: #ffffff;
-  color: #4b5563;
+  background: var(--secondry-color) fff;
+  color: var(--text-color);
   border: 0 none;
   border-radius: 6px;
   box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
@@ -1290,17 +1287,15 @@ table {
 .p-dropdown-panel .p-dropdown-items {
   padding: 0.75rem 0;
 }
-/* .p-dropdown-items-wrapper {
-  overflow: auto;
-} */
 .p-dropdown-items {
   margin: 0;
   padding: 0;
   list-style-type: none;
+  background-color: var(--text-color);
 }
 .p-dropdown-panel .p-dropdown-items .p-dropdown-item.p-highlight {
-  color: #4338ca;
-  background: #eef2ff;
+  color: var(--third-color);
+  background: var(--primary-color);
 }
 .p-dropdown-panel .p-dropdown-items .p-dropdown-item:first-child {
   margin-top: 0;
@@ -1332,20 +1327,19 @@ table {
   align-items: center;
 }
 
-.upperHeader {
+/* .upperHeader {
   width: 100%;
   padding: 15px 100px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid;
 
   .logoContainer {
     width: 250px;
     text-align: center;
 
     p {
-      color: #171717;
+      color: var(--text-color);
       font-weight: 700;
       margin: 0;
       font-size: 19.7px;
@@ -1370,17 +1364,21 @@ table {
       height: 100%;
     }
   }
-}
+} */
 
 .aboutContainer {
-  background: #fff;
+  background: var(--secondry-color);
   padding: 50px;
   border-radius: 10px;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
   position: relative;
+  color: var(--text-color);
+
+  h3 {
+    color: var(--third-color);
+  }
 }
 .eventsContainer {
-  background: #fff;
+  background: var(--secondry-color);
   border-radius: 15px;
   height: 260px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
@@ -1395,7 +1393,7 @@ table {
   display: block;
   border-bottom: 2px solid #f08a5d;
   position: sticky;
-  background: #fff;
+  background: var(--secondry-color);
   top: 0;
   z-index: 999;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
@@ -1419,23 +1417,22 @@ table {
 }
 .dateContainer {
   position: relative;
-  width: 70px;
-  height: 70px;
-  border-right: 1px solid;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: #2e2e2e;
+  background: var(--primary-color);
   border-radius: 10px;
+  padding-top: 10px;
   p {
     margin: 0;
-    color: #f08a5d;
+    color: var(--text-color);
   }
   h2 {
-    color: #f08a5d;
+    color: var(--third-color);
     font-weight: 600;
+    margin: 0;
   }
 }
 .titleContainer {
@@ -1462,6 +1459,21 @@ table {
     }
   }
 }
+
+@media (max-width:992px) {
+  .dateContainer h2{
+    font-size: 3rem;
+  }
+  .heading a h1{
+    font-size: 1.2rem !important;
+  }
+  .eventDescription p{
+    font-size: 14px !important;
+  }
+}
+
+
+
 .dropDownContainer {
   position: absolute;
   width: max-content;
@@ -1477,7 +1489,7 @@ table {
   li {
     width: 100%;
     padding: 10px 20px;
-    border-top: 1px solid #f08a5d;
+    border-top: 1px solid var(--primary-color);
     cursor: pointer;
     transition: background-color 0.3s ease;
 
@@ -1490,7 +1502,7 @@ table {
     }
 
     &:hover {
-      background-color: #f08a5d;
+      background-color: var(--third-color);
       color: white;
     }
   }
@@ -1541,7 +1553,7 @@ table {
     .LoginTitle {
       width: 100%;
       text-align: center;
-      color: #f08a5d;
+      color: var(--third-color);
       font-weight: 600;
       text-transform: uppercase;
     }
@@ -1586,16 +1598,16 @@ table {
         position: relative;
         padding: 10px 50px;
         background: transparent;
-        color: #f08a5d;
-        border: 1px solid #f08a5d;
+        color: var(--text-color);
+        border: 1px solid var(--text-color);
         font-size: 20px;
         font-weight: 500;
         transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out,
           transform 0.2s ease-in-out;
 
         &:hover {
-          color: #f3f4f6;
-          background-color: #f08a5d;
+          color: var(--primary-color);
+          background-color: var(--text-color);
           transform: scale(1.1);
         }
       }
@@ -1608,7 +1620,7 @@ table {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  border: 2px solid #f08a5d;
+  border: 2px solid var(--primary-color);
   right: 15px;
   top: 15px;
   display: flex;
@@ -1619,7 +1631,7 @@ table {
   transition: border-color 0.5s;
 
   i {
-    color: #f08a5d;
+    color: var(--primary-color);
     font-size: 20px;
     transition: color 0.5s, transform 0.2s;
   }
@@ -1648,7 +1660,7 @@ table {
 .profileContainer {
   position: relative;
   width: 100%;
-  background: #fff;
+  background: var(--secondry-color);
   border-radius: 15px;
 
   .profileImageContainer {
@@ -1659,22 +1671,22 @@ table {
     justify-content: center;
     flex-direction: column;
 
-    .profileBanner{
+    .profileBanner {
       width: 100%;
-    height: 200px;
-    position: relative;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    border-radius: 15px 15px 0 0;
+      height: 200px;
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      border-radius: 15px 15px 0 0;
     }
 
     .profileImage {
       position: absolute;
       width: 140px;
       height: 140px;
-      background: #ffffff;
-      padding: 3px;
+      background: var(--text-color);
+      padding: 2px;
       border-radius: 50%;
       top: 120px;
       left: 30px;
@@ -1684,7 +1696,7 @@ table {
         height: 100%;
         object-fit: cover;
         border-radius: 50%;
-        border: 1px solid #000000;
+        border: 2px solid var(--primary-color);
       }
     }
     .nameContainer {
@@ -1693,7 +1705,12 @@ table {
       width: 100%;
       margin-top: 50px;
 
+      h3{
+        color: var(--third-color);
+      }
+
       p {
+        color: var(--text-color);
         margin: 0;
       }
       .socialMediaIcons {
@@ -1718,7 +1735,7 @@ table {
           transition: background-color 0.2s linear, color 0.2s linear;
 
           &:hover {
-            background-color: #f08a5d;
+            background-color: var(--third-color);
             color: #f3f4f6;
           }
         }
@@ -1730,8 +1747,11 @@ table {
       padding: 25px;
 
       h6 {
-        color: #f08a5d;
+        color:var(--third-color);
         font-size: 20px;
+      }
+      p{
+        color: var(--text-color);
       }
     }
     .buttonContainer {
@@ -1746,15 +1766,16 @@ table {
       button {
         position: relative;
         padding: 7px 30px;
-        border: 1px solid #f08a5d;
+        border: 1px solid var(--text-color);
         background: transparent;
-        color: #f08a5d;
+        color: var(--text-color);
         font-size: 20px;
         font-weight: 400;
 
         &:first-child {
-          background-color: #f08a5d;
-          color: white;
+          background-color: var(--third-color);
+          color:var(--primary-color);
+          border-color: var(--third-color);
         }
       }
     }
@@ -1764,7 +1785,7 @@ table {
 .profileEditContainer {
   width: 100%;
   position: relative;
-  background-color: #fff;
+  background-color: var(--secondry-color);
   padding: 30px;
   border-radius: 15px;
 
@@ -1780,6 +1801,7 @@ table {
         font-weight: 600;
         text-transform: uppercase;
         position: relative;
+        color: var(--third-color);
 
         &::after {
           content: "";
@@ -1788,7 +1810,7 @@ table {
           left: 0;
           width: 100%;
           height: 3px;
-          background-color: #f08a5d;
+          background-color: var(--text-color);
         }
       }
     }
@@ -1806,12 +1828,13 @@ table {
       input,
       textarea {
         position: relative;
-        background-color: #f1f1f1;
+        background-color: var(--primary-color);
         border: none;
         outline: none;
         padding: 10px;
         font-size: 20px;
         border-radius: 10px;
+        color: var(--text-color);
 
         &:first-child,
         &:nth-child(3),
@@ -1827,15 +1850,15 @@ table {
       button {
         position: relative;
         padding: 7px 30px;
-        border: 1px solid #f08a5d;
+        border: 1px solid var(--third-color);
         background: transparent;
-        color: #f08a5d;
+        color: var(--third-color);
         font-size: 20px;
         font-weight: 400;
         transition: background-color 0.2s, color 0.2s;
 
         &:hover {
-          background-color: #f08a5d;
+          background-color: var(--third-color);
           color: #f1f1f1;
         }
       }
@@ -1859,7 +1882,7 @@ table {
 .userProfileContainer {
   position: relative;
   width: 100%;
-  background: #fff;
+  background: var(--secondry-color);
   border-radius: 15px;
 
   .profileBannerContainer {
@@ -1881,17 +1904,17 @@ table {
     width: 160px;
     height: 160px;
     border-radius: 50%;
-    background: #fff;
+    background: var(--text-color);
     left: 40px;
     top: 110px;
-    padding: 4px;
+    padding: 2px;
 
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       border-radius: 50%;
-      border: 2px solid black;
+      border: 2px solid var(--primary-color);
     }
   }
   .userNameContainer {
@@ -1899,8 +1922,12 @@ table {
     width: 100%;
     margin-top: 50px;
     padding: 30px;
+    h3{
+      color: var(--third-color);
+    }
     p {
       margin: 0;
+      color: var(--text-color);
     }
     .socialMediaIcons {
       width: 100%;
@@ -1924,7 +1951,7 @@ table {
         transition: background-color 0.2s linear, color 0.2s linear;
 
         &:hover {
-          background-color: #f08a5d;
+          background-color: var(--third-color);
           color: #f3f4f6;
         }
       }
@@ -1935,7 +1962,7 @@ table {
     width: 100%;
 
     h6 {
-      color: #f08a5d;
+      color: var(--third-color);
       font-size: 20px;
     }
   }
@@ -1950,21 +1977,115 @@ table {
     button {
       position: relative;
       padding: 7px 30px;
-      border: 1px solid #f08a5d;
+      border: 1px solid var(--text-color);
       background: transparent;
-      color: #f08a5d;
+      color: var(--text-color);
       font-size: 20px;
       font-weight: 400;
 
       &:first-child {
-        background-color: #f08a5d;
+        background-color: var(--third-color);
         color: white;
+        border-color: var(--third-color);
       }
     }
   }
 }
 
-label{
+label {
   width: 100%;
   text-align: left;
+  color: var(--text-color);
+}
+.aboutImageContainer,
+.visionImageContainer {
+  position: relative;
+  width: 100%;
+
+  img {
+    width: 100%;
+    border-radius: 10px;
+  }
+}
+
+.committeeContainer{
+  position: relative;
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: var(--secondry-color);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  .committeeMemberImage{
+    width: 80px;
+    height: 80px;
+    position: relative;
+    background: var(--primary-color);
+    border-radius: 50%;
+    padding: 2px;
+
+    img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 2px solid var(--text-color);
+    }
+  }
+
+  h3{
+    color: var(--third-color);
+    margin: 0;
+  }
+  p{
+    color: var(--text-color);
+    margin: 0;
+  }
+}
+
+@media (max-width:768px) {
+  .committeeMemberImage{
+    width: 70px !important;
+    height: 70px !important;
+  }
+  .committeeMemberDetails h3{
+    font-size: 17px;
+  }
+  .committeeMemberDetails p{
+    font-size: 12px;
+  }
+}
+
+.eveTitle h1 span{
+  display: inline-block;
+}
+.eventDescription{
+  width: 100%;
+  /* padding: 10px; */
+
+  p{
+    margin: 0;
+    font-size: 18px;
+    font-weight: 300;
+  }
+}
+
+.othersMembersImage{
+  position: relative;
+  width: 60px;
+  height: 60px;
+  background: var(--primary-color);
+  border-radius: 50%;
+  padding: 2px;
+
+  img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid var(--text-color);
+  }
+
 }

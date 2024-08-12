@@ -9,44 +9,54 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Events() {
   const container = useRef();
 
-  useGSAP(()=>{
-    let ctx = gsap.context(()=>{
-      const tl = gsap.timeline()
+  useGSAP(
+    () => {
+      let ctx = gsap.context(() => {
+        const text = document
+          .querySelector(".eveTitle h1")
+          .textContent.split("")
+          .map((val) => (val === " " ? "&nbsp;" : `<span>${val}</span>`))
+          .join("");
 
-      tl.from(".animate",{
-        scrollTrigger: {
-          trigger: ".animate",
-          start: "top top",
-          scrub: 1,
-          markers: true,
-        },
-        opacity:0,
-        y:100,
-        duration:0.5,
-        delay:0.5,
-        stagger:0.5,
-  
-      })
-    })
-    
-  },{scope:container})
+        document.querySelector(".eveTitle h1").innerHTML = text;
 
+        gsap.from(".eveTitle h1 span", {
+          opacity: 0,
+          delay: 0.5,
+          duration: 0.5,
+          stagger: 0.09,
+        });
+
+        gsap.from(".animate", {
+          delay: 2,
+          opacity: 0,
+          y: 100,
+          duration: 0.5,
+          delay: 0.5,
+          stagger: 0.5,
+        });
+      });
+    },
+    { scope: container }
+  );
 
   return (
     <section className="sectionContainer" ref={container}>
       <div className="container">
-        <div className="title">
+        <div className="title eveTitle">
           <h1>Upcoming Events</h1>
         </div>
         <div className="row mb-5 animate">
           <div className="col-lg-12">
             <div className="eventContainer">
-              <div className="row">
-                <div className="col-lg-2" style={{ borderRight: "1px solid" }}>
-                  <p>DEC</p>
-                  <h2>19</h2>
+              <div className="row row-gap-3">
+                <div className="col-lg-2 col-md-2 col-sm-3 text-center py-2">
+                  <div className="dateContainer">
+                    <p>DEC</p>
+                    <h2>19</h2>
+                  </div>
                 </div>
-                <div className="col-lg-10">
+                <div className="col-lg-10 col-md-10 col-sm-9">
                   <div className="row">
                     <div className="col-lg-12">
                       <div className="heading">
@@ -59,19 +69,11 @@ export default function Events() {
                       </div>
                     </div>
                     <div className="col-lg-12 my-2">
-                      <div className="eventDate">
+                      <div className="eventDescription">
                         <p>
-                          <i className="fa-solid fa-calendar-days"></i>
-                          MONDAY, 19 DEC 2024 | 10:00 AM to 08:00 PM
-                        </p>
-                      </div>
-                    </div>
-                    <div className="col-lg-12">
-                      <div className="location">
-                        <p>
-                          <i className="fa-solid fa-location-dot"></i>
-                          Lorem ipsum dolor, sit amet consectetur adipisicing
-                          elit. Et, aliquid.
+                          Lorem ipsum dolor sit amet, consectetur adipisicing
+                          elit. Voluptas aperiam fugit, quaerat maiores odit hic
+                          placeat consequuntur ullam maxime officia!
                         </p>
                       </div>
                     </div>
@@ -84,12 +86,14 @@ export default function Events() {
         <div className="row mb-5 animate" ref={container}>
           <div className="col-lg-12">
             <div className="eventContainer">
-              <div className="row">
-                <div className="col-lg-2" style={{ borderRight: "1px solid" }}>
-                  <p>DEC</p>
-                  <h2>20</h2>
+              <div className="row row-gap-3">
+                <div className="col-lg-2 col-md-2 col-sm-3 text-center py-2">
+                  <div className="dateContainer">
+                    <p>DEC</p>
+                    <h2>20</h2>
+                  </div>
                 </div>
-                <div className="col-lg-10">
+                <div className="col-lg-10 col-md-10 col-sm-9">
                   <div className="row">
                     <div className="col-lg-12">
                       <div className="heading">
@@ -102,19 +106,11 @@ export default function Events() {
                       </div>
                     </div>
                     <div className="col-lg-12 my-2">
-                      <div className="eventDate">
+                      <div className="eventDescription">
                         <p>
-                          <i className="fa-solid fa-calendar-days"></i>
-                          Tuesday, 20 DEC 2024 | 10:00 AM to 08:00 PM
-                        </p>
-                      </div>
-                    </div>
-                    <div className="col-lg-12">
-                      <div className="location">
-                        <p>
-                          <i className="fa-solid fa-location-dot"></i>
-                          Lorem ipsum dolor, sit amet consectetur adipisicing
-                          elit. Et, aliquid.
+                          Lorem ipsum dolor sit amet, consectetur adipisicing
+                          elit. Voluptas aperiam fugit, quaerat maiores odit hic
+                          placeat consequuntur ullam maxime officia!
                         </p>
                       </div>
                     </div>
@@ -127,12 +123,14 @@ export default function Events() {
         <div className="row mb-5 animate" ref={container}>
           <div className="col-lg-12">
             <div className="eventContainer">
-              <div className="row">
-                <div className="col-lg-2" style={{ borderRight: "1px solid" }}>
-                  <p>DEC</p>
-                  <h2>21</h2>
+              <div className="row row-gap-4">
+                <div className="col-lg-2 col-md-2 col-sm-3 text-center py-2" >
+                  <div className="dateContainer">
+                    <p>DEC</p>
+                    <h2>21</h2>
+                  </div>
                 </div>
-                <div className="col-lg-10">
+                <div className="col-lg-10 col-md-10 col-sm-9">
                   <div className="row">
                     <div className="col-lg-12">
                       <div className="heading">
@@ -146,19 +144,11 @@ export default function Events() {
                       </div>
                     </div>
                     <div className="col-lg-12 my-2">
-                      <div className="eventDate">
+                      <div className="eventDescription">
                         <p>
-                          <i className="fa-solid fa-calendar-days"></i>
-                          Wednesday, 21 DEC 2024 | 10:00 AM to 08:00 PM
-                        </p>
-                      </div>
-                    </div>
-                    <div className="col-lg-12">
-                      <div className="location">
-                        <p>
-                          <i className="fa-solid fa-location-dot"></i>
-                          Lorem ipsum dolor, sit amet consectetur adipisicing
-                          elit. Et, aliquid.
+                          Lorem ipsum dolor sit amet, consectetur adipisicing
+                          elit. Voluptas aperiam fugit, quaerat maiores odit hic
+                          placeat consequuntur ullam maxime officia!
                         </p>
                       </div>
                     </div>
