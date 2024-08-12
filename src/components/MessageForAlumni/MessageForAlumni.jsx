@@ -19,8 +19,16 @@ export default function MessageForAlumni() {
               </div>
               <div className="theirMessage">
                 <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet molestias mollitia vitae alias reiciendis sint vel natus consequatur officia ad quasi dolore praesentium tempore delectus voluptate, similique repellendus tenetur cupiditate!
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet molestias mollitia vitae alias reiciendis 
+                  As we celebrate 40 years of the St. John's School, BLW,
+                  Varanasi Alumni Association, I am filled with immense pride
+                  and gratitude. Founded with a vision to connect and support
+                  our diverse alumni family, the association has grown into a
+                  vibrant community. Our journey over these decades reflects our
+                  collective achievements and the enduring spirit of St. John's.
+                  Together, we have built lasting friendships, supported one
+                  another, and contributed to society. As we look to the future,
+                  let's continue to uphold the values instilled in us and
+                  strengthen the bonds that unite us.
                 </p>
               </div>
             </div>
@@ -38,8 +46,16 @@ export default function MessageForAlumni() {
               </div>
               <div className="theirMessage">
                 <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet molestias mollitia vitae alias reiciendis sint vel natus consequatur officia ad quasi dolore praesentium tempore delectus voluptate, similique repellendus tenetur cupiditate!
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet molestias mollitia vitae alias reiciendis 
+                  As we mark the 25th anniversary of the 1999 batch from St.
+                  John's School, BLW, Varanasi, I am honored to represent our
+                  incredible journey. These past 25 years have been a testament
+                  to the values and lessons we learned within those cherished
+                  school walls. Our bonds have only strengthened over time, and
+                  our achievements reflect the foundation laid at St. John's. As
+                  we celebrate this milestone, let's reconnect, reminisce, and
+                  renew our commitment to supporting each other and our alma
+                  mater. Together, we continue to embody the spirit of our
+                  school.
                 </p>
               </div>
             </div>
