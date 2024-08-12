@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Fancybox from "../ImageZoom/Fancybox";
 
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
@@ -44,7 +45,7 @@ export default function Events() {
     <section className="sectionContainer" ref={container}>
       <div className="container">
         <div className="title eveTitle">
-          <h1>Upcoming Events</h1>
+          <h1>Events</h1>
         </div>
         <div className="row mb-5 animate">
           <div className="col-lg-12">
@@ -52,30 +53,47 @@ export default function Events() {
               <div className="row row-gap-3">
                 <div className="col-lg-2 col-md-2 col-sm-3 text-center py-2">
                   <div className="dateContainer">
-                    <p>DEC</p>
-                    <h2>19</h2>
+                    <p>July</p>
+                    <h2>14</h2>
                   </div>
                 </div>
                 <div className="col-lg-10 col-md-10 col-sm-9">
                   <div className="row">
-                    <div className="col-lg-12">
-                      <div className="heading">
-                        <a href="/">
-                          <h1>
-                            Meet & Greet{" "}
-                            <i className="fa-solid fa-arrow-right "></i>
-                          </h1>
-                        </a>
+                    <div className="col-lg-9 col-md-9">
+                      <div className="row">
+                        <div className="col-lg-12">
+                          <div className="heading">
+                            <a href="/">
+                              <h1>
+                                AGM for Elections held @ Hotel Royal Livin,
+                                Gurudham Colony, Varanasi
+                                <i className="fa-solid fa-arrow-right "></i>
+                              </h1>
+                            </a>
+                          </div>
+                        </div>
+                        <div className="col-lg-12 my-2">
+                          <div className="eventDescription">
+                            <p>
+                              Lorem ipsum dolor sit amet, consectetur
+                              adipisicing elit. Voluptas aperiam fugit, quaerat
+                              maiores odit hic placeat consequuntur ullam maxime
+                              officia!
+                            </p>
+                          </div>
+                        </div>
                       </div>
                     </div>
-                    <div className="col-lg-12 my-2">
-                      <div className="eventDescription">
-                        <p>
-                          Lorem ipsum dolor sit amet, consectetur adipisicing
-                          elit. Voluptas aperiam fugit, quaerat maiores odit hic
-                          placeat consequuntur ullam maxime officia!
-                        </p>
-                      </div>
+                    <div className="col-lg-3 col-md-3">
+                      <Fancybox>
+                        <div
+                          className="eventImagesContainer"
+                          data-fancybox="gallery"
+                          href="/images/events/agm-ellection.jpeg"
+                        >
+                          <img src="/images/events/agm-ellection.jpeg" alt="" />
+                        </div>
+                      </Fancybox>
                     </div>
                   </div>
                 </div>
@@ -83,74 +101,52 @@ export default function Events() {
             </div>
           </div>
         </div>
-        <div className="row mb-5 animate" ref={container}>
+        <div className="row mb-5 animate">
           <div className="col-lg-12">
             <div className="eventContainer">
               <div className="row row-gap-3">
                 <div className="col-lg-2 col-md-2 col-sm-3 text-center py-2">
                   <div className="dateContainer">
-                    <p>DEC</p>
-                    <h2>20</h2>
-                  </div>
-                </div>
-                <div className="col-lg-10 col-md-10 col-sm-9">
-                  <div className="row">
-                    <div className="col-lg-12">
-                      <div className="heading">
-                        <a href="/">
-                          <h1>
-                            Memories Events & Grand Party for '99' Batch{" "}
-                            <i className="fa-solid fa-arrow-right "></i>
-                          </h1>
-                        </a>
-                      </div>
-                    </div>
-                    <div className="col-lg-12 my-2">
-                      <div className="eventDescription">
-                        <p>
-                          Lorem ipsum dolor sit amet, consectetur adipisicing
-                          elit. Voluptas aperiam fugit, quaerat maiores odit hic
-                          placeat consequuntur ullam maxime officia!
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="row mb-5 animate" ref={container}>
-          <div className="col-lg-12">
-            <div className="eventContainer">
-              <div className="row row-gap-4">
-                <div className="col-lg-2 col-md-2 col-sm-3 text-center py-2" >
-                  <div className="dateContainer">
-                    <p>DEC</p>
+                    <p>July</p>
                     <h2>21</h2>
                   </div>
                 </div>
                 <div className="col-lg-10 col-md-10 col-sm-9">
                   <div className="row">
-                    <div className="col-lg-12">
-                      <div className="heading">
-                        <a href="/">
-                          <h1>
-                            School Functions All Day Long Followed By Gala
-                            Dinner At Night.{" "}
-                            <i className="fa-solid fa-arrow-right "></i>
-                          </h1>
-                        </a>
+                    <div className="col-lg-9 col-md-9">
+                      <div className="row">
+                        <div className="col-lg-12">
+                          <div className="heading">
+                            <a href="/">
+                              <h1>
+                                Grand Opening of Quick Bites
+                                <i className="fa-solid fa-arrow-right "></i>
+                              </h1>
+                            </a>
+                          </div>
+                        </div>
+                        <div className="col-lg-12 my-2">
+                          <div className="eventDescription">
+                            <p>
+                              Dear Friends, Join us for the grand opening of our
+                              new outlet, featuring all your favorites from Sri
+                              Annapurna Foods under one roof! Your presence will
+                              make this special occasion even more memorable.
+                            </p>
+                          </div>
+                        </div>
                       </div>
                     </div>
-                    <div className="col-lg-12 my-2">
-                      <div className="eventDescription">
-                        <p>
-                          Lorem ipsum dolor sit amet, consectetur adipisicing
-                          elit. Voluptas aperiam fugit, quaerat maiores odit hic
-                          placeat consequuntur ullam maxime officia!
-                        </p>
-                      </div>
+                    <div className="col-lg-3 col-md-3">
+                      <Fancybox>
+                        <div
+                          className="eventImagesContainer"
+                          data-fancybox="gallery"
+                          href="/images/events/quick-bites.jpeg"
+                        >
+                          <img src="/images/events/quick-bites.jpeg" alt="" />
+                        </div>
+                      </Fancybox>
                     </div>
                   </div>
                 </div>
