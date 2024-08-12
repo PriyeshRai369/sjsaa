@@ -65,7 +65,7 @@ export default function Events() {
                           <div className="heading">
                             <a href="/">
                               <h1>
-                                AGM for Elections held @ Hotel Royal Livin,
+                                AGM Elections held @ Hotel Royal Livin,
                                 Gurudham Colony, Varanasi
                                 <i className="fa-solid fa-arrow-right "></i>
                               </h1>

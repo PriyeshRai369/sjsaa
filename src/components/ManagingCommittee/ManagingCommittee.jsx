@@ -8,21 +8,21 @@ export default function ManagingCommittee() {
           <h1>Managing Committee</h1>
         </div>
         <div className="row row-gap-3">
-          <div className="col-lg-6 col-md-6 col-sm-6 text-center">
+          <div className="col-lg-6 col-md-6 col-sm-6 ">
             <div className="committeeContainer">
               <div className="committeeMemberImage"></div>
               <div className="committeeMemberDetails">
                 <h3>Raj Kumar Agrawal</h3>
-                <p>1984 Batch, Chief Mentor</p>
+                <p>1984 Batch<br /> Chief Mentor</p>
               </div>
             </div>
           </div>
-          <div className="col-lg-6 col-md-6 col-sm-6 text-center">
+          <div className="col-lg-6 col-md-6 col-sm-6 ">
             <div className="committeeContainer">
               <div className="committeeMemberImage"></div>
               <div className="committeeMemberDetails">
                 <h3>Abhinav Pandey</h3>
-                <p>1999 Batch, President</p>
+                <p>1999 Batch<br /> President</p>
               </div>
             </div>
           </div>
