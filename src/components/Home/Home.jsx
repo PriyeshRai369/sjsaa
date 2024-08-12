@@ -7,6 +7,7 @@ import AboutUs from "../AboutUs/AboutUs";
 import Events from "../Events/Events";
 import ManagingCommittee from "../ManagingCommittee/ManagingCommittee";
 import News from "../News/News";
+import Achievers from "../Achievers/Achievers";
 
 export default function Home() {
   return (
@@ -19,7 +20,8 @@ export default function Home() {
       <Stories/>
       <Vision/>
       <MessageForAlumni/>
-      <News/>
+      {/* <News/> */}
+      <Achievers/>
     </>
   );
 }

@@ -5,7 +5,7 @@ export default function Footer() {
       <div className="footerContainer">
         <div className="container">
           <div className="row row-gap-3">
-            <div className="col-lg-4 col-md-4 col-sm-6 text-center">
+            <div className="col-lg-6 col-md-8 col-sm-6 text-center">
               <div className="footerLogoContainer">
                 <img src="/images/school_logo.png" alt="" />
                 <p style={{textAlign:"justify"}}>
@@ -52,7 +52,7 @@ export default function Footer() {
               </div>
             </div>
 
-            <div className="col-lg-4 col-md-4 col-sm-6 text-center">
+            <div className="col-lg-3 col-md-4 col-sm-6">
               <div className="footerLinksContainers">
                 <h3>Quick Links</h3>
                 <ul>
@@ -78,7 +78,7 @@ export default function Footer() {
               </div>
             </div>
 
-            <div className="col-lg-4 col-md-4 col-sm-12 text-center">
+            <div className="col-lg-3 col-md-4 col-sm-12 ">
               <div className="footerLinksContainers">
                 <h3>Contact US</h3>
                 <lord-icon

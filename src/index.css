@@ -793,27 +793,53 @@ body {
   position: relative;
 
   h3 {
+    width: max-content;
+    position: relative;
     margin-top: 50px;
     color: var(--third-color);
     margin-bottom: 40px;
     font-size: 25px;
+
+    &::after{
+      content: "";
+      position: absolute;
+      width: 50%;
+      height: 3px;
+      background-color: var(--third-color);
+      left: 0;
+      bottom: -5px;
+      z-index: 999;
+      transition: width 0.5s cubic-bezier(1, 0, 0, 1);
+      border-radius: 20px;
+    }
   }
   p {
     color: var(--text-color);
   }
   ul {
     display: flex;
-    align-items: center;
     flex-direction: column;
-    text-align: center;
     padding: 0;
   }
   ul li {
     position: relative;
     margin-bottom: 10px;
 
+    
+  }
+  ul li a {
+    position: relative;
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 17px;
+    letter-spacing: 1px;
+    opacity: 0.7;
+
     &:hover::after {
       width: 100%;
+    }
+    &:hover{
+      opacity: 1;
     }
 
     &::after {
@@ -828,12 +854,6 @@ body {
       transition: width 0.5s cubic-bezier(1, 0, 0, 1);
       border-radius: 20px;
     }
-  }
-  ul li a {
-    text-decoration: none;
-    color: #f3f4f6;
-    font-size: 20px;
-    letter-spacing: 1px;
   }
 }
 
@@ -2088,4 +2108,13 @@ label {
     border: 2px solid var(--text-color);
   }
 
+}
+
+
+.achieversContainer{
+  width: 100%;
+  position: relative;
+  padding: 20px;
+  background-color: var(--secondry-color);
+  border-radius: 15px;
 }

@@ -12,10 +12,12 @@
   "dependencies": {
     "@emotion/react": "^11.13.0",
     "@emotion/styled": "^11.13.0",
+    "@fancyapps/ui": "github:fancyapps/ui",
     "@gsap/react": "^2.1.1",
     "@mui/material": "^5.16.6",
     "@mui/styled-engine-sc": "^6.0.0-alpha.18",
     "@mui/x-data-grid": "^7.12.0",
+    "fslightbox-react": "^1.7.6",
     "gsap": "^3.12.5",
     "primereact": "^10.8.2",
     "react": "^18.3.1",
