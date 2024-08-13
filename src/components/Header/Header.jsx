@@ -13,6 +13,7 @@ export default function Header() {
   const headerRef = useRef(null);
   const upperHeaderRef = useRef();
   const [dropDownOpen, setDropOpen] = useState(false);
+  const [memberDropDownOpen, setMemberDropDownOpen] = useState(false);
   const { loginModal, setLoginModal, container } = useContext(Context);
   const linkRef = useRef();
   const handleToggle = () => {
@@ -188,6 +189,7 @@ export default function Header() {
                 setIsOpened(false);
                 setDropOpen(false);
                 scrollToTop();
+                setMemberDropDownOpen(false);
               }}
             >
               Home
@@ -202,6 +204,7 @@ export default function Header() {
                 setIsOpened(false);
                 setDropOpen(false);
                 scrollToTop();
+                setMemberDropDownOpen(false);
               }}
             >
               About Us
@@ -209,23 +212,41 @@ export default function Header() {
           </div>
           {/* <div style={{width:"2px",height:"40px",backgroundColor:"black"}}></div> */}
           <div className="lkns">
-            <NavLink
-              to="/our-alumni"
-              className={({ isActive }) => (isActive ? "act" : "navLinks")}
+            <div
+              
+              className="navLinks"
               onClick={() => {
-                setIsOpened(false);
                 setDropOpen(false);
-                scrollToTop();
+                setMemberDropDownOpen(!memberDropDownOpen)
               }}
             >
               Members
-            </NavLink>
+              <i
+                class="fa-solid fa-angle-right"
+                style={{
+                  transform: `${
+                    !memberDropDownOpen ? "rotate(90deg) translateY(-5px)" : "rotate(-90deg) translateY(6px)" 
+                  }`,
+                  color: `${!memberDropDownOpen ? "var(--text-color)" : "var(--third-color)"}`,
+                }}
+              ></i>
+            </div>
+            <ul
+              className="memberDropDown"
+              style={{
+                display: `${memberDropDownOpen ? "block" : "none"}`,
+                transition: "all 0.5s",
+              }}
+            >
+              <li onClick={()=>setMemberDropDownOpen(false)}><Link to="/register">New Member Registration</Link> </li>
+              <li onClick={()=>setMemberDropDownOpen(false)}><Link to="/our-alumni">All Alumni List</Link></li>
+            </ul>
           </div>
           {/* <div style={{width:"2px",height:"40px",backgroundColor:"black"}}></div> */}
           <div className="lkns">
             <div
               className="navLinks"
-              onClick={() => setDropOpen(!dropDownOpen)}
+              onClick={() => {setDropOpen(!dropDownOpen);setMemberDropDownOpen(false);}}
             >
               Engage{" "}
               <i
@@ -258,6 +279,7 @@ export default function Header() {
                 setIsOpened(false);
                 setDropOpen(false);
                 scrollToTop();
+                setMemberDropDownOpen(false);
               }}
             >
               Events
@@ -272,6 +294,7 @@ export default function Header() {
                 setIsOpened(false);
                 setDropOpen(false);
                 scrollToTop();
+                setMemberDropDownOpen(false);
               }}
             >
               Gallery

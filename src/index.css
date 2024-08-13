@@ -800,7 +800,7 @@ body {
     margin-bottom: 40px;
     font-size: 25px;
 
-    &::after{
+    &::after {
       content: "";
       position: absolute;
       width: 50%;
@@ -824,8 +824,6 @@ body {
   ul li {
     position: relative;
     margin-bottom: 10px;
-
-    
   }
   ul li a {
     position: relative;
@@ -838,7 +836,7 @@ body {
     &:hover::after {
       width: 100%;
     }
-    &:hover{
+    &:hover {
       opacity: 1;
     }
 
@@ -1073,7 +1071,6 @@ table {
   background-color: var(--secondry-color) !important;
   text-align: center;
   border-collapse: collapse;
-  
 
   th,
   td {
@@ -1097,7 +1094,7 @@ table {
 .p-paginator {
   background: var(--secondry-color) fffde;
   color: #6b7280;
-  border:1px solid var(--third-color);
+  border: 1px solid var(--third-color);
   border-width: 0;
   padding: 0.5rem 1rem;
   border-radius: 6px;
@@ -1480,19 +1477,17 @@ table {
   }
 }
 
-@media (max-width:992px) {
-  .dateContainer h2{
+@media (max-width: 992px) {
+  .dateContainer h2 {
     font-size: 3rem;
   }
-  .heading a h1{
+  .heading a h1 {
     font-size: 1.2rem !important;
   }
-  .eventDescription p{
+  .eventDescription p {
     font-size: 14px !important;
   }
 }
-
-
 
 .dropDownContainer {
   position: absolute;
@@ -1536,13 +1531,37 @@ table {
     left: 15px !important;
     background: transparent !important;
     color: white !important;
-    border: 1px solid #f08a5d;
+    border: 1px solid var(--third-color);
     width: 100% !important;
     left: 0 !important;
     transition: display 0.5s;
+
+    li {
+      border-top: 1px solid var(--text-color);
+    }
   }
   .eventsContainer {
     height: 100% !important;
+  }
+
+  .memberDropDown {
+    display: none;
+    position: relative !important;
+    top: 15px !important;
+    left: 15px !important;
+    background: transparent !important;
+    border: 1px solid var(--third-color);
+    width: 100% !important;
+    left: 0 !important;
+    transition: display 0.5s;
+
+    li:last-child{
+      border-top: 1px solid var(--text-color) !important;
+    }
+
+    li a {
+      color: white !important;
+    }
   }
 }
 
@@ -1725,7 +1744,7 @@ table {
       width: 100%;
       margin-top: 50px;
 
-      h3{
+      h3 {
         color: var(--third-color);
       }
 
@@ -1767,10 +1786,10 @@ table {
       padding: 25px;
 
       h6 {
-        color:var(--third-color);
+        color: var(--third-color);
         font-size: 20px;
       }
-      p{
+      p {
         color: var(--text-color);
       }
     }
@@ -1794,7 +1813,7 @@ table {
 
         &:first-child {
           background-color: var(--third-color);
-          color:var(--primary-color);
+          color: var(--primary-color);
           border-color: var(--third-color);
         }
       }
@@ -1942,7 +1961,7 @@ table {
     width: 100%;
     margin-top: 50px;
     padding: 30px;
-    h3{
+    h3 {
       color: var(--third-color);
     }
     p {
@@ -2028,7 +2047,7 @@ label {
   }
 }
 
-.committeeContainer{
+.committeeContainer {
   position: relative;
   width: 100%;
   height: 100%;
@@ -2039,7 +2058,7 @@ label {
   align-items: center;
   gap: 15px;
 
-  .committeeMemberImage{
+  .committeeMemberImage {
     width: 80px;
     height: 80px;
     position: relative;
@@ -2047,7 +2066,7 @@ label {
     border-radius: 50%;
     padding: 2px;
 
-    img{
+    img {
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -2058,58 +2077,58 @@ label {
     }
   }
 
-  h6{
+  h6 {
     color: var(--third-color);
     margin: 0;
   }
-  h3{
+  h3 {
     color: var(--third-color);
     margin: 0;
     font-size: 18px;
   }
-  p{
+  p {
     color: var(--text-color);
     margin: 0;
     font-size: 15px;
   }
 }
 
-@media (max-width:768px) {
-  .committeeMemberImage{
+@media (max-width: 768px) {
+  .committeeMemberImage {
     width: 70px !important;
     height: 70px !important;
   }
-  .committeeMemberDetails h3{
+  .committeeMemberDetails h3 {
     font-size: 12px;
   }
-  .committeeMemberDetails p{
+  .committeeMemberDetails p {
     font-size: 10px;
   }
 }
 
-@media (min-width:768px) and (max-width:1500px) {
-  .committeeMemberDetails{
+@media (min-width: 768px) and (max-width: 1500px) {
+  .committeeMemberDetails {
     width: calc(100% - 80px) !important;
     /* white-space: nowrap; */
     overflow: hidden;
   }
 }
 
-.eveTitle h1 span{
+.eveTitle h1 span {
   display: inline-block;
 }
-.eventDescription{
+.eventDescription {
   width: 100%;
   /* padding: 10px; */
 
-  p{
+  p {
     margin: 0;
     font-size: 18px;
     font-weight: 300;
   }
 }
 
-.othersMembersImage{
+.othersMembersImage {
   position: relative;
   width: 60px;
   height: 60px;
@@ -2117,37 +2136,35 @@ label {
   border-radius: 50%;
   padding: 2px;
 
-  img{
+  img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 50%;
     border: 2px solid var(--text-color);
   }
-
 }
 
-
-.achieversContainer{
+.achieversContainer {
   width: 100%;
   position: relative;
   padding: 20px;
   background-color: var(--secondry-color);
   border-radius: 15px;
 
-  h2{
+  h2 {
     color: var(--third-color);
   }
-  p{
+  p {
     margin: 0;
     color: var(--text-color);
   }
 }
-.achieveImg{
+.achieveImg {
   width: 100%;
   height: 300px;
 
-  img{
+  img {
     width: 100%;
     height: 100%;
     border-radius: 10px;
@@ -2155,16 +2172,57 @@ label {
     cursor: pointer;
   }
 }
-.eventImagesContainer{
+.eventImagesContainer {
   width: 100%;
   height: 200px;
   position: relative;
 
-  img{
+  img {
     width: 100%;
     height: 100%;
     border-radius: 10px;
     cursor: pointer;
     object-fit: contain;
+  }
+}
+
+.memberDropDown {
+  position: absolute;
+  width: max-content;
+  background-color: white;
+  flex-direction: column;
+  padding: 0;
+  top: 54px;
+  border-radius: 10px;
+
+  li {
+    width: 100%;
+    padding: 10px 20px;
+    border-top: 1px solid var(--primary-color);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    a {
+      text-decoration: none;
+      color: var(--primary-color);
+      width: 100%;
+      height: 100%;
+      padding: 10px 20px;
+    }
+
+    &:first-child {
+      border-radius: 10px 10px 0 0;
+      border: none;
+    }
+    &:last-child {
+      border-radius: 0 0 10px 10px;
+    }
+
+    &:hover {
+      background-color: var(--third-color);
+    }
+    &:hover a {
+      color: var(--text-color);
+    }
   }
 }
