@@ -1,12 +1,37 @@
 import { Link } from "react-router-dom";
 import { scrollToTop } from "../../helper/scroll";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { useRef } from "react";
+
+gsap.registerPlugin(useGSAP);
 
 export default function ManagingCommittee() {
+  const members = useRef();
+
+  useGSAP(
+    () => {
+      const txt = document
+        .querySelector(".tl")
+        .textContent.split("")
+        .map((val) => (val === " " ? "&nbsp;" : `<span>${val}</span>`))
+        .join("");
+
+      document.querySelector(".tl").innerHTML = txt;
+      gsap.from(".tl span", {
+        opacity: 0,
+        delay: 0.5,
+        duration: 0.5,
+        stagger: 0.09,
+      });
+    },
+    { scope: members }
+  );
   return (
-    <section className="sectionContainer">
+    <section className="sectionContainer" ref={members}>
       <div className="container">
         <div className="title">
-          <h1>Managing Committee</h1>
+          <h1 className="tl">Managing Committee</h1>
         </div>
         <div className="row row-gap-3">
           <div className="col-lg-4 col-md-6 col-sm-6 ">
@@ -119,9 +144,9 @@ export default function ManagingCommittee() {
           </div>
         </div>
         <Link to={"/managing-committee-members"} onClick={scrollToTop}>
-        <button className="viewMoreBtn" style={{ marginTop: "50px" }}>
-          View More Members
-        </button>
+          <button className="viewMoreBtn" style={{ marginTop: "50px" }}>
+            View More Members
+          </button>
         </Link>
       </div>
     </section>

@@ -238,8 +238,8 @@ export default function Header() {
                 transition: "all 0.5s",
               }}
             >
-              <li onClick={()=>setMemberDropDownOpen(false)}><Link to="/register">New Member Registration</Link> </li>
-              <li onClick={()=>setMemberDropDownOpen(false)}><Link to="/our-alumni">All Alumni List</Link></li>
+              <li onClick={()=>{setMemberDropDownOpen(false);scrollToTop();}}><Link to="/register">New Member Registration</Link> </li>
+              <li onClick={()=>{setMemberDropDownOpen(false);scrollToTop();}}><Link to="/our-alumni">All Alumni List</Link></li>
             </ul>
           </div>
           {/* <div style={{width:"2px",height:"40px",backgroundColor:"black"}}></div> */}

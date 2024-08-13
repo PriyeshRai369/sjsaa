@@ -1,13 +1,46 @@
-import React from "react";
+import React, { useRef } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+
+gsap.registerPlugin(useGSAP);
 
 export default function AllManagingMembers() {
+
+  const members = useRef();
+
+  useGSAP(
+    () => {
+      const txt = document
+        .querySelector(".tl")
+        .textContent.split("")
+        .map((val) => (val === " " ? "&nbsp;" : `<span>${val}</span>`))
+        .join("");
+
+      document.querySelector(".tl").innerHTML = txt;
+      gsap.from(".tl span", {
+        opacity: 0,
+        delay: 0.5,
+        duration: 0.5,
+        stagger: 0.09,
+      });
+      gsap.from(".firstRow div",{
+        opacity:0,
+        duration:0.7,
+        stagger:0.05
+      })
+    },
+    { scope: members }
+  );
+
+
+
   return (
-    <section className="sectionContainer">
+    <section className="sectionContainer" ref={members}>
       <div className="container">
         <div className="title">
-          <h1>All Managing Committee Members</h1>
+          <h1 className="tl">All Managing Committee Members</h1>
         </div>
-        <div className="row row-gap-3">
+        <div className="row row-gap-3 firstRow">
           <div className="col-lg-4 col-md-6 col-sm-6 ">
             <div className="committeeContainer">
               <div className="committeeMemberImage">
