@@ -11,10 +11,9 @@ gsap.registerPlugin(useGSAP);
 export default function Header() {
   const [isOpened, setIsOpened] = useState(false);
   const headerRef = useRef(null);
-  const container = useRef();
   const upperHeaderRef = useRef();
   const [dropDownOpen, setDropOpen] = useState(false);
-  const { loginModal, setLoginModal } = useContext(Context);
+  const { loginModal, setLoginModal, container } = useContext(Context);
   const linkRef = useRef();
   const handleToggle = () => {
     setIsOpened(!isOpened);
@@ -82,45 +81,45 @@ export default function Header() {
   //   };
   // }, [linkRef, upperHeaderRef]);
 
-  useGSAP(
-    () => {
-      const tl = gsap.timeline();
+  // useGSAP(
+  //   () => {
+  //     const tl = gsap.timeline();
 
-      const logo = document
-        .querySelector(".logoText")
-        .textContent.split("")
-        .map((val) => (val === " " ? "&nbsp;" : `<span>${val}</span>`))
-        .join("");
-      // console.log(logo);
+  //     const logo = document
+  //       .querySelector(".logoText")
+  //       .textContent.split("")
+  //       .map((val) => (val === " " ? "&nbsp;" : `<span>${val}</span>`))
+  //       .join("");
+  //     // console.log(logo);
 
-      document.querySelector(".logoText").innerHTML = logo;
-      tl.from(".logoText span", {
-        opacity: 0,
-        delay: 0.5,
-        duration: 0.5,
-        stagger: 0.09,
-      });
-      tl.from(".secondLogo", {
-        duration: 0.5,
-        opacity: 0,
-      });
-      gsap.from(".btnContainer", {
-        delay: 1.2,
-        y: -50,
-        duration: 0.5,
-        opacity: 0,
-      });
+  //     document.querySelector(".logoText").innerHTML = logo;
+  //     tl.from(".logoText span", {
+  //       opacity: 0,
+  //       delay: 0.5,
+  //       duration: 0.5,
+  //       stagger: 0.09,
+  //     });
+  //     tl.from(".secondLogo", {
+  //       duration: 0.5,
+  //       opacity: 0,
+  //     });
+  //     gsap.from(".btnContainer", {
+  //       delay: 1.2,
+  //       y: -50,
+  //       duration: 0.5,
+  //       opacity: 0,
+  //     });
 
-      gsap.from(".lkns", {
-        delay: 1,
-        y: -50,
-        duration: 0.8,
-        opacity: 0,
-        stagger: 0.1,
-      });
-    },
-    { scope: container }
-  );
+  //     gsap.from(".lkns", {
+  //       delay: 1,
+  //       y: -50,
+  //       duration: 0.8,
+  //       opacity: 0,
+  //       stagger: 0.1,
+  //     });
+  //   },
+  //   { scope: container }
+  // );
   useEffect(() => {
     if (loginModal) {
       document.body.style.overflow = "hidden";

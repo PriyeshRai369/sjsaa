@@ -1,12 +1,10 @@
-import React from "react";
-import Events from "../Events/Events";
-import { Link } from "react-router-dom";
+import React, { useContext } from "react";
 
 export default function AboutUs() {
   return (
     <section className="sectionContainer">
-      <div className="container">
-        <div className="title">
+      <div className="container" >
+        <div className="title aboutTitle">
           <h1>About Us</h1>
         </div>
         <div className="row">
