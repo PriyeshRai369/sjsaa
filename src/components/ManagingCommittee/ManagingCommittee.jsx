@@ -1,4 +1,5 @@
-import React from "react";
+import { Link } from "react-router-dom";
+import { scrollToTop } from "../../helper/scroll";
 
 export default function ManagingCommittee() {
   return (
@@ -57,7 +58,7 @@ export default function ManagingCommittee() {
               <div className="col-lg-3 col-md-6  col-md-6">
                 <div className="committeeContainer">
                   <div className="othersMembersImage">
-                  <img src="/images/managing/President.png" alt="" />
+                    <img src="/images/managing/President.png" alt="" />
                   </div>
                   <div className="committeeMemberDetails">
                     <h6>XJ ABHINAV PANDEY</h6>
@@ -72,7 +73,7 @@ export default function ManagingCommittee() {
               <div className="col-lg-3 col-md-6  col-md-6">
                 <div className="committeeContainer">
                   <div className="othersMembersImage">
-                  <img src="/images/managing/Vice-President.jpg" alt="" />
+                    <img src="/images/managing/Vice-President.jpg" alt="" />
                   </div>
                   <div className="committeeMemberDetails">
                     <h6>XJ DIGVIJAY SINGH</h6>
@@ -87,7 +88,7 @@ export default function ManagingCommittee() {
               <div className="col-lg-3 col-md-6  col-md-6">
                 <div className="committeeContainer">
                   <div className="othersMembersImage">
-                  <img src="/images/managing/Secretary.jpg" alt="" />
+                    <img src="/images/managing/Secretary.jpg" alt="" />
                   </div>
                   <div className="committeeMemberDetails">
                     <h6>XJ HARSH MADHOK</h6>
@@ -102,7 +103,7 @@ export default function ManagingCommittee() {
               <div className="col-lg-3 col-md-6 col-md-6">
                 <div className="committeeContainer">
                   <div className="othersMembersImage">
-                  <img src="/images/managing/Treasurer.png" alt="" />
+                    <img src="/images/managing/Treasurer.png" alt="" />
                   </div>
                   <div className="committeeMemberDetails">
                     <h6>XJ MANISH KATARIA</h6>
@@ -117,7 +118,11 @@ export default function ManagingCommittee() {
             </div>
           </div>
         </div>
-        <button className="viewMoreBtn" style={{marginTop:"50px"}}>View More Members</button>
+        <Link to={"/managing-committee-members"} onClick={scrollToTop}>
+        <button className="viewMoreBtn" style={{ marginTop: "50px" }}>
+          View More Members
+        </button>
+        </Link>
       </div>
     </section>
   );

@@ -1,34 +1,6 @@
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useRef } from "react";
-
-gsap.registerPlugin(useGSAP);
-gsap.registerPlugin(ScrollTrigger);
-
 export default function Vision() {
-  const container = useRef();
-
-  useGSAP(
-    () => {
-      const tl = gsap.timeline();
-
-      tl.from(".visionContainer", {
-        opacity: 0,
-        y: 100,
-        duration: 1,
-        delay: 1,
-        scrollTrigger: {
-          trigger: ".visionContainer",
-          scrub: 1,
-        },
-      });
-    },
-    { scope: container }
-  );
-
   return (
-    <section className="sectionContainer" ref={container}>
+    <section className="sectionContainer">
       <div className="container">
         <div className="row">
           <div className="col-lg-12">
