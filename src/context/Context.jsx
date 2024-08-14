@@ -27,12 +27,12 @@ export default function ContextProvider({ children }) {
       document.querySelector(".logoText").innerHTML = logo;
       tl.from(".logoText span", {
         opacity: 0,
-        delay: .4,
+        delay: .25,
         duration: 0.5,
         stagger: 0.09,
       });
       tl.from(".secondLogo", {
-        duration: 0.5,
+        duration: 0.3,
         opacity: 0,
       });
       gsap.from(".btnContainer", {

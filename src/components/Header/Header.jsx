@@ -173,10 +173,15 @@ export default function Header() {
       <nav className="nav" ref={headerRef}>
         <div className="logoContainer" onClick={scrollToTop}>
           <Link to={"/"}>
-            <p>
-              <span className="logoText">St John&apos;s School</span>
-              <span className="secondLogo">Alumni Association</span>
-            </p>
+            <div className="logoImg">
+              <img src="/images/8.png" alt="" />
+            </div>
+            <div className="textLogoContainer">
+              <p>
+                <span className="logoText">St John&apos;s School</span>
+                <span className="secondLogo">Alumni Association</span>
+              </p>
+            </div>
           </Link>
         </div>
         <div

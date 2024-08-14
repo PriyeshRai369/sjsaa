@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Footer() {
     let date = new Date().getFullYear()
   return (
@@ -107,7 +109,7 @@ export default function Footer() {
         </div>
       </div>
         <div className="endSection">
-            <p>  Copyright @ {date} <span>St. Jhon&apos;s School Alumni Association</span> | Made With <i className="fa-solid fa-heart" style={{color:"#C40C0C"}}></i> By <span>Wizards.</span></p>
+            <p>  Copyright @ {date} <span>St. John&apos;s School Alumni Association</span> | Made With <i className="fa-solid fa-heart" style={{color:"#C40C0C"}}></i> By <Link to="https://wizards.co.in/" target="_blank"><span>Wizards.</span></Link></p>
         </div>
     </section>
   );

@@ -1,4 +1,6 @@
+import { Link } from "react-router-dom";
 import Fancybox from "../ImageZoom/Fancybox";
+import { scrollToTop } from "../../helper/scroll";
 export default function Stories() {
   return (
     <section className="sectionContainer">
@@ -66,6 +68,11 @@ export default function Stories() {
             </div>
           </div>
         </Fancybox>
+        <Link to={"/gallery"} onClick={scrollToTop}>
+          <button className="viewMoreBtn" style={{ marginTop: "50px" }}>
+            View More Images
+          </button>
+        </Link>
       </div>
     </section>
   );
