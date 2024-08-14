@@ -3,12 +3,18 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Fancybox from "../ImageZoom/Fancybox";
+import { Link, useLocation } from "react-router-dom";
+import { scrollToTop } from "../../helper/scroll";
 
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Events() {
   const container = useRef();
+  const location = useLocation();
+
+  // Access the current path
+  const currentPath = location.pathname;
 
   useGSAP(
     () => {
@@ -75,7 +81,13 @@ export default function Events() {
                         <div className="col-lg-12 my-2">
                           <div className="eventDescription">
                             <p>
-                            Rajkumar Agarwal Chairman of Alumni Association Varanasi. The annual general meeting of the Alumni Association of St. John's School Bareka was held on Sunday. Rajkumar Agarwal was elected chairman, Puneet Agarwal vice chairman, Abhinav Pandey president, Digvijay Singh vice president, Harsh Madhok secretary and Manish Kataria treasurer.
+                              Rajkumar Agarwal Chairman of Alumni Association
+                              Varanasi. The annual general meeting of the Alumni
+                              Association of St. John's School Bareka was held
+                              on Sunday. Rajkumar Agarwal was elected chairman,
+                              Puneet Agarwal vice chairman, Abhinav Pandey
+                              president, Digvijay Singh vice president, Harsh
+                              Madhok secretary and Manish Kataria treasurer.
                             </p>
                           </div>
                         </div>
@@ -216,7 +228,13 @@ export default function Events() {
           </div>
         </div>
 
-        <button className="viewMoreBtn">View More Events</button>
+        {currentPath === "/event" ? (
+          ""
+        ) : (
+          <Link to={"/event"} onClick={scrollToTop}>
+            <button className="viewMoreBtn">View More Events</button>
+          </Link>
+        )}
       </div>
     </section>
   );
