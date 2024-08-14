@@ -7,7 +7,7 @@ export default function Loader() {
       <div className="container">
         <div className="row">
           <div className="col-lg-12 d-flex justify-content-center">
-            <div class="loader"></div>
+            <div className="loader"></div>
           </div>
         </div>
       </div>

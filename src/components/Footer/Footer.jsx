@@ -107,7 +107,7 @@ export default function Footer() {
         </div>
       </div>
         <div className="endSection">
-            <p>  Copyright @ {date} <span>St. Jhon&apos;s School Alumni Association</span> | Made With ❤ By <span>Wizards.</span></p>
+            <p>  Copyright @ {date} <span>St. Jhon&apos;s School Alumni Association</span> | Made With <i className="fa-solid fa-heart" style={{color:"#C40C0C"}}></i> By <span>Wizards.</span></p>
         </div>
     </section>
   );
