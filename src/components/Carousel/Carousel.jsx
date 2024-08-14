@@ -12,11 +12,13 @@ export default function Carousel() {
               src="/images/banner/banner-01.jpg"
               className=" w-100 bann"
               alt="..."
+              loading="lazy"
             />
             <img
               src="/images/banner/mobileBanner-01.jpg"
               className=" w-100 mobBanner"
               alt="..."
+              loading="lazy"
             />
           </div>
         </div>

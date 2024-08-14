@@ -45,7 +45,7 @@ export default function Vision() {
                 </div>
                 <div className="col-lg-4">
                   <div className="visionImageContainer">
-                    <img src="/images/vision.png" alt="" />
+                    <img src="/images/vision.png" alt="" loading="lazy"/>
                   </div>
                 </div>
               </div>

@@ -1,10 +1,12 @@
-import { useContext, useEffect, useRef, useState } from "react";
+import { lazy, Suspense, useContext, useEffect, useRef, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import LoginModal from "../LoginModal/LoginModal";
+// import LoginModal from "../LoginModal/LoginModal";
 import { Context } from "../../context/Context";
 import { scrollToTop } from "../../helper/scroll.js";
+import Loader from "../Loader/Loader.jsx";
+const LoginModal = lazy(() => import("../LoginModal/LoginModal"));
 
 gsap.registerPlugin(useGSAP);
 
@@ -169,7 +171,7 @@ export default function Header() {
         </div>
       </div> */}
       <nav className="nav" ref={headerRef}>
-        <div className="logoContainer" onClick={scrollToTop} >
+        <div className="logoContainer" onClick={scrollToTop}>
           <Link to={"/"}>
             <p>
               <span className="logoText">St John&apos;s School</span>
@@ -213,11 +215,10 @@ export default function Header() {
           {/* <div style={{width:"2px",height:"40px",backgroundColor:"black"}}></div> */}
           <div className="lkns">
             <div
-              
               className="navLinks"
               onClick={() => {
                 setDropOpen(false);
-                setMemberDropDownOpen(!memberDropDownOpen)
+                setMemberDropDownOpen(!memberDropDownOpen);
               }}
             >
               Members
@@ -225,9 +226,15 @@ export default function Header() {
                 class="fa-solid fa-angle-right"
                 style={{
                   transform: `${
-                    !memberDropDownOpen ? "rotate(90deg) translateY(-5px)" : "rotate(-90deg) translateY(6px)" 
+                    !memberDropDownOpen
+                      ? "rotate(90deg) translateY(-5px)"
+                      : "rotate(-90deg) translateY(6px)"
                   }`,
-                  color: `${!memberDropDownOpen ? "var(--text-color)" : "var(--third-color)"}`,
+                  color: `${
+                    !memberDropDownOpen
+                      ? "var(--text-color)"
+                      : "var(--third-color)"
+                  }`,
                 }}
               ></i>
             </div>
@@ -238,15 +245,32 @@ export default function Header() {
                 transition: "all 0.5s",
               }}
             >
-              <li onClick={()=>{setMemberDropDownOpen(false);scrollToTop();}}><Link to="/register">New Member Registration</Link> </li>
-              <li onClick={()=>{setMemberDropDownOpen(false);scrollToTop();}}><Link to="/our-alumni">All Alumni List</Link></li>
+              <li
+                onClick={() => {
+                  setMemberDropDownOpen(false);
+                  scrollToTop();
+                }}
+              >
+                <Link to="/register">New Member Registration</Link>{" "}
+              </li>
+              <li
+                onClick={() => {
+                  setMemberDropDownOpen(false);
+                  scrollToTop();
+                }}
+              >
+                <Link to="/our-alumni">All Alumni List</Link>
+              </li>
             </ul>
           </div>
           {/* <div style={{width:"2px",height:"40px",backgroundColor:"black"}}></div> */}
           <div className="lkns">
             <div
               className="navLinks"
-              onClick={() => {setDropOpen(!dropDownOpen);setMemberDropDownOpen(false);}}
+              onClick={() => {
+                setDropOpen(!dropDownOpen);
+                setMemberDropDownOpen(false);
+              }}
             >
               Engage{" "}
               <i
@@ -255,7 +279,9 @@ export default function Header() {
                   transform: `${
                     !dropDownOpen ? "rotate(90deg)" : "rotate(-90deg)"
                   }`,
-                  color: `${!dropDownOpen ? "var(--text-color)" : "var(--third-color)"}`,
+                  color: `${
+                    !dropDownOpen ? "var(--text-color)" : "var(--third-color)"
+                  }`,
                 }}
               ></i>
             </div>
@@ -302,7 +328,9 @@ export default function Header() {
           </div>
         </div>
         <div className="btnContainer">
-          <button className="loginBtn" onClick={()=>setLoginModal(true)}>Login</button>
+          <button className="loginBtn" onClick={() => setLoginModal(true)}>
+            Login
+          </button>
           <div className="menuBtnContainer">
             <button
               id="menuBtns"
@@ -326,7 +354,7 @@ export default function Header() {
           </div>
         </div>
       </nav>
-      {loginModal && <LoginModal />}
+      <Suspense fallback={<Loader />}>{loginModal && <LoginModal />}</Suspense>
     </header>
   );
 }

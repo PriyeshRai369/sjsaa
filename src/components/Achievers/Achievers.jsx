@@ -19,7 +19,7 @@ export default function Achievers() {
                       data-fancybox="gallery"
                       href="/images/invitation.jpg"
                     >
-                      <img src="/images/invitation.jpg" alt="" />
+                      <img src="/images/invitation.jpg" alt="" loading="lazy"/>
                     </div>
                   </Fancybox>
                 </div>
@@ -57,7 +57,7 @@ export default function Achievers() {
                       data-fancybox="gallery"
                       href="/images/achievers/01.jpg"
                     >
-                      <img src="/images/achievers/01.jpg" alt="" />
+                      <img src="/images/achievers/01.jpg" alt="" loading="lazy"/>
                     </div>
                   </Fancybox>
                 </div>

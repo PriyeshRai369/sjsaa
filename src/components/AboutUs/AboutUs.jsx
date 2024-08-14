@@ -46,7 +46,7 @@ export default function AboutUs() {
                 </div>
                 <div className="col-lg-4">
                   <div className="aboutImageContainer">
-                  <img src="/images/aboutUs.png" />
+                  <img src="/images/aboutUs.png" loading="lazy"/>
                   </div>
                 </div>
               </div>

@@ -27,7 +27,7 @@ export default function ContextProvider({ children }) {
       document.querySelector(".logoText").innerHTML = logo;
       tl.from(".logoText span", {
         opacity: 0,
-        delay: 5.2,
+        delay: .4,
         duration: 0.5,
         stagger: 0.09,
       });
@@ -36,14 +36,14 @@ export default function ContextProvider({ children }) {
         opacity: 0,
       });
       gsap.from(".btnContainer", {
-        delay: 5.6,
+        delay: .6,
         y: -50,
         duration: 0.5,
         opacity: 0,
       });
 
       gsap.from(".lkns", {
-        delay: 5.6,
+        delay: .6,
         y: -50,
         duration: 0.8,
         opacity: 0,

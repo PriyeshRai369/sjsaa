@@ -10,7 +10,7 @@ export default function MessageForAlumni() {
             <div className="messageContainer">
               <div className="messageImgContainer">
                 <div className="profilePic shine">
-                  <img src="/images/managing/chairman.jpg" alt="" />
+                  <img src="/images/managing/chairman.jpg" alt="" loading="lazy"/>
                 </div>
               </div>
               <div className="name">
@@ -37,7 +37,7 @@ export default function MessageForAlumni() {
             <div className="messageContainer">
               <div className="messageImgContainer">
                 <div className="profilePic shine">
-                  <img src="/images/managing/President.png" alt="" />
+                  <img src="/images/managing/President.png" alt="" loading="lazy"/>
                 </div>
               </div>
               <div className="name">

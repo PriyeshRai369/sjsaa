@@ -91,7 +91,7 @@ export default function Events() {
                           data-fancybox="gallery"
                           href="/images/events/agm-ellection.jpeg"
                         >
-                          <img src="/images/events/agm-ellection.jpeg" alt="" />
+                          <img src="/images/events/agm-ellection.jpeg" alt="" loading="lazy"/>
                         </div>
                       </Fancybox>
                     </div>
@@ -144,7 +144,7 @@ export default function Events() {
                           data-fancybox="gallery"
                           href="/images/events/quick-bites.jpeg"
                         >
-                          <img src="/images/events/quick-bites.jpeg" alt="" />
+                          <img src="/images/events/quick-bites.jpeg" alt="" loading="lazy"/>
                         </div>
                       </Fancybox>
                     </div>

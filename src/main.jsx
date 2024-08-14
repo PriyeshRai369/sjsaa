@@ -1,37 +1,102 @@
-import React from 'react'
+import React, { Suspense, lazy } from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
-import { createBrowserRouter,createRoutesFromElements, RouterProvider, Route } from 'react-router-dom'
-import AboutUs from './components/About/AboutUs.jsx'
-import Home from './components/Home/Home.jsx'
-import OurAlumni from './components/OurAlumni/OurAlumni.jsx'
-import UpcomingEvents from './components/UpcomingEvents/UpcomingEvents.jsx'
-import Gallery from './components/Gallery/Gallery.jsx'
+import { createBrowserRouter, createRoutesFromElements, RouterProvider, Route } from 'react-router-dom'
 import ContextProvider from './context/Context.jsx'
-import Profile from './components/Profile/Profile.jsx'
-import NotFoundPage from './components/NotFound/NotFoundPage.jsx'
-import UserProfile from './components/UserProfile/UserProfile.jsx'
-import AllManagingMembers from './components/AllManagingMembers/AllManagingMembers.jsx'
+
+const Home = lazy(() => import('./components/Home/Home.jsx'));
+const AboutUs = lazy(() => import('./components/About/AboutUs.jsx'));
+const OurAlumni = lazy(() => import('./components/OurAlumni/OurAlumni.jsx'));
+const UpcomingEvents = lazy(() => import('./components/UpcomingEvents/UpcomingEvents.jsx'));
+const Gallery = lazy(() => import('./components/Gallery/Gallery.jsx'));
+const Profile = lazy(() => import('./components/Profile/Profile.jsx'));
+const NotFoundPage = lazy(() => import('./components/NotFound/NotFoundPage.jsx'));
+const UserProfile = lazy(() => import('./components/UserProfile/UserProfile.jsx'));
+const AllManagingMembers = lazy(() => import('./components/AllManagingMembers/AllManagingMembers.jsx'));
+import Loader from './components/Loader/Loader.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path='/' element={<App/>}>
-      <Route path='/' element={<Home/>}/>
-      <Route path='/our-alumni' element={<OurAlumni/>}/>
-      <Route path='/about-us' element={<AboutUs/>}/>
-      <Route path='/event' element={<UpcomingEvents/>}/>
-      <Route path='/gallery' element={<Gallery/>}/>
-      <Route path='/managing-committee-members' element={<AllManagingMembers/>}/>
-      <Route path='/profile' element={<Profile/>}/>
-      <Route path='/user/profile' element={<UserProfile/>}/>
-      <Route path='*' element={<NotFoundPage/>}/>
+    <Route path='/' element={<App />}>
+      <Route
+        path='/'
+        element={
+          <Suspense fallback={<Loader/>}>
+            <Home />
+          </Suspense>
+        }
+      />
+      <Route
+        path='/our-alumni'
+        element={
+          <Suspense fallback={<Loader/>}>
+            <OurAlumni />
+          </Suspense>
+        }
+      />
+      <Route
+        path='/about-us'
+        element={
+          <Suspense fallback={<Loader/>}>
+            <AboutUs />
+          </Suspense>
+        }
+      />
+      <Route
+        path='/event'
+        element={
+          <Suspense fallback={<Loader/>}>
+            <UpcomingEvents />
+          </Suspense>
+        }
+      />
+      <Route
+        path='/gallery'
+        element={
+          <Suspense fallback={<Loader/>}>
+            <Gallery />
+          </Suspense>
+        }
+      />
+      <Route
+        path='/managing-committee-members'
+        element={
+          <Suspense fallback={<Loader/>}>
+            <AllManagingMembers />
+          </Suspense>
+        }
+      />
+      <Route
+        path='/profile'
+        element={
+          <Suspense fallback={<Loader/>}>
+            <Profile />
+          </Suspense>
+        }
+      />
+      <Route
+        path='/user/profile'
+        element={
+          <Suspense fallback={<Loader/>}>
+            <UserProfile />
+          </Suspense>
+        }
+      />
+      <Route
+        path='*'
+        element={
+          <Suspense fallback={<Loader/>}>
+            <NotFoundPage />
+          </Suspense>
+        }
+      />
     </Route>
   )
 )
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <ContextProvider>
-    <RouterProvider router={router}  />
-  </ContextProvider>,
+    <RouterProvider router={router} />
+  </ContextProvider>
 )
