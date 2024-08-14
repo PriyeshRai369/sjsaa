@@ -1017,7 +1017,7 @@ body.menu-open {
 
 @media (max-width: 480px) {
   .loginBtn{
-    font-size: 11px !important;
+    font-size: 12px !important;
   }
   #menuBtns svg{
     width: 40px;
