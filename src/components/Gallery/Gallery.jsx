@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { scrollToTop } from "../../helper/scroll";
 
 export default function Gallery() {
   const [hoveredImage, setHoveredImage] = useState(null);
@@ -47,8 +48,8 @@ export default function Gallery() {
                 <h4>Enjoying Movie</h4>
               </div>
               <div className="viewBtn">
-                <Link to="/movie-gallery">
-                  <button className="view-more-btn">View More</button>
+                <Link to="movie-gallery">
+                  <button className="view-more-btn" onClick={scrollToTop}>View More</button>
                 </Link>
               </div>
             </div>
@@ -86,8 +87,8 @@ export default function Gallery() {
                 <h4>AGM Elections Images</h4>
               </div>
               <div className="viewBtn">
-                <Link to="/agm-election-gallery">
-                  <button className="view-more-btn">View More</button>
+                <Link to="agm-election-gallery">
+                  <button className="view-more-btn" onClick={scrollToTop}>View More</button>
                 </Link>
               </div>
             </div>

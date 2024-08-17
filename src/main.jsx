@@ -15,6 +15,7 @@ const NotFoundPage = lazy(() => import('./components/NotFound/NotFoundPage.jsx')
 const UserProfile = lazy(() => import('./components/UserProfile/UserProfile.jsx'));
 const AllManagingMembers = lazy(() => import('./components/AllManagingMembers/AllManagingMembers.jsx'));
 import Loader from './components/Loader/Loader.jsx'
+const MovieGallery = lazy(()=>import("./components/MovieGallery/MovieGallery.jsx"))
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -59,6 +60,16 @@ const router = createBrowserRouter(
           </Suspense>
         }
       />
+
+      <Route
+        path='/gallery/movie-gallery'
+        element={
+          <Suspense fallback={<Loader/>}>
+            <MovieGallery />
+          </Suspense>
+        }
+      />
+      
       <Route
         path='/managing-committee-members'
         element={
@@ -83,6 +94,7 @@ const router = createBrowserRouter(
           </Suspense>
         }
       />
+      
       <Route
         path='*'
         element={
