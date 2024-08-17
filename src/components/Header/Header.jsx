@@ -254,6 +254,7 @@ export default function Header() {
                 onClick={() => {
                   setMemberDropDownOpen(false);
                   scrollToTop();
+                  setIsOpened(false);
                 }}
               >
                 <Link to="/new-member-registration">New Member Registration</Link>{" "}
@@ -262,6 +263,7 @@ export default function Header() {
                 onClick={() => {
                   setMemberDropDownOpen(false);
                   scrollToTop();
+                  setIsOpened(false);
                 }}
               >
                 <Link to="/our-alumni">All Alumni List</Link>
