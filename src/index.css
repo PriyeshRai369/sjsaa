@@ -2462,3 +2462,34 @@ label {
     border: 2px solid var(--text-color);
   }
 }
+
+
+.memberFilter{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.filterSection{
+  width: 50%;
+  padding: 10px;
+  background-color: var(--secondry-color);
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  border-radius: 15px;
+
+  input,select {
+    background-color: var(--primary-color);
+    border: none;
+    outline: none;
+    color: var(--text-color);
+    padding: 10px 5px;
+    border-radius: 5px;
+    font-size: 20px;
+  }
+  input{
+    width: 100%;
+  }
+}
