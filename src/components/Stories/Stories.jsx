@@ -14,7 +14,7 @@ export default function Stories() {
               infinite: false,
             },
           }}
-        >
+        > 
           <div className="row row-gap-5">
             <div className="col-lg-3 col-md-4 col-sm-6 col-6">
               <div className="storyImgContainer"  data-fancybox="gallery" href="/images/party/01.jpeg">

@@ -269,7 +269,7 @@ export default function Header() {
             </ul>
           </div>
           {/* <div style={{width:"2px",height:"40px",backgroundColor:"black"}}></div> */}
-          <div className="lkns">
+          {/* <div className="lkns">
             <div
               className="navLinks"
               onClick={() => {
@@ -300,7 +300,7 @@ export default function Header() {
               <li>Share Achivements</li>
               <li>Share Opportunity</li>
             </ul>
-          </div>
+          </div> */}
           {/* <div style={{width:"2px",height:"40px",backgroundColor:"black"}}></div> */}
           <div className="lkns">
             <NavLink
@@ -336,6 +336,7 @@ export default function Header() {
           <button className="loginBtn" onClick={() => setLoginModal(true)}>
             Login
           </button>
+
           <div className="menuBtnContainer">
             <button
               id="menuBtns"
