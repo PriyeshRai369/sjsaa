@@ -1,19 +1,18 @@
-import React, { useEffect, useRef, useState } from "react";
-import { movieImages } from "../../helper/movieImageSrc";
-import Fancybox from "../ImageZoom/Fancybox";
+import React from 'react'
+import Fancybox from '../ImageZoom/Fancybox'
+import { agmImages } from '../../helper/agm'
 
-export default function MovieGallery() {
-
+export default function AGMElection() {
   return (
-    <section className="sectionContainer" >
+    <section className='sectionContainer'>
       <div className="container">
         <div className="title">
-          <h1>Images From Auron Mein Kahan Dum Tha Movie.</h1>
+          <h1>Images From AGM Election.</h1>
         </div>
         <div className="row">
           <div className="col-lg-12">
             <div className="galleryAllImageContainer">
-              {movieImages.map((image) => (
+              {agmImages.map((image) => (
                 <Fancybox
                   options={{
                     Carousel: {
@@ -36,5 +35,5 @@ export default function MovieGallery() {
         </div>
       </div>
     </section>
-  );
+  )
 }

@@ -16,6 +16,7 @@ const UserProfile = lazy(() => import('./components/UserProfile/UserProfile.jsx'
 const AllManagingMembers = lazy(() => import('./components/AllManagingMembers/AllManagingMembers.jsx'));
 import Loader from './components/Loader/Loader.jsx'
 const MovieGallery = lazy(()=>import("./components/MovieGallery/MovieGallery.jsx"))
+const AGMElection = lazy(()=>import("./components/AGMElection/AGMElection.jsx"))
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -66,6 +67,14 @@ const router = createBrowserRouter(
         element={
           <Suspense fallback={<Loader/>}>
             <MovieGallery />
+          </Suspense>
+        }
+      />
+      <Route
+        path='/gallery/agm-election-gallery'
+        element={
+          <Suspense fallback={<Loader/>}>
+            <AGMElection />
           </Suspense>
         }
       />
