@@ -2344,7 +2344,7 @@ label {
 
 .galleryAllImageContainer {
   width: 100%;
-  columns: 4; 
+  columns: 4;
   column-gap: 20px;
 
   .imageGrid {
@@ -2363,7 +2363,7 @@ label {
       display: block;
     }
   }
-  
+
   @media (max-width: 1200px) {
     columns: 3;
   }
@@ -2374,5 +2374,91 @@ label {
 
   @media (max-width: 480px) {
     columns: 1;
+  }
+}
+
+.regFormContainer {
+  width: 100%;
+  position: relative;
+  background-color: var(--secondry-color);
+  padding: 30px;
+  border-radius: 15px;
+
+  input,select {
+    width: 100%;
+    background-color: var(--primary-color);
+    border: none;
+    outline: none;
+    color: var(--text-color);
+    padding: 10px 5px;
+    border-radius: 5px;
+    font-size: 22px;
+  }
+
+  sup {
+    color: #c40c0c;
+  }
+  label {
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  .reg-profile-pic {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    background: var(--primary-color);
+
+    input {
+      position: absolute;
+      bottom: 0;
+    }
+  }
+  span {
+    color: var(--third-color);
+    font-size: 14px;
+  }
+
+  textarea {
+    width: 100%;
+    background: var(--primary-color);
+    border: none;
+    outline: none;
+    padding: 10px;
+    border-radius: 10px;
+    color: var(--text-color);
+    font-size: 25px;
+  }
+
+  .regSubmitBtn {
+    width: 100%;
+    position: relative;
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    button {
+      padding: 10px 70px;
+      background-color: transparent;
+      color: var(--third-color);
+      border: 1px solid var(--third-color);
+      font-size: 1.3rem;
+      font-weight: 500;
+      transition: all 0.5s;
+
+      &:hover {
+        border: 1px solid var(--third-color);
+        background-color: var(--third-color);
+        color: #d1d5db;
+        border-radius: 50px;
+      }
+    }
+  }
+
+  input:focus,select:focus,textarea:focus{
+    border: 2px solid var(--text-color);
   }
 }

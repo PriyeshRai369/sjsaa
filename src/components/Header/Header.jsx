@@ -256,7 +256,7 @@ export default function Header() {
                   scrollToTop();
                 }}
               >
-                <Link to="/register">New Member Registration</Link>{" "}
+                <Link to="/new-member-registration">New Member Registration</Link>{" "}
               </li>
               <li
                 onClick={() => {
