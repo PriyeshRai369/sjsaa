@@ -106,7 +106,7 @@ const router = createBrowserRouter(
         }
       />
       <Route
-        path='/user/profile'
+        path='/user/profile/:id'
         element={
           <Suspense fallback={<Loader/>}>
             <UserProfile />

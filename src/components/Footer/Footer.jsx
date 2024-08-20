@@ -65,22 +65,19 @@ export default function Footer() {
                 <h3>Quick Links</h3>
                 <ul>
                   <li>
-                    <a href="#">Home</a>
+                    <a href="/">Home</a>
                   </li>
                   <li>
-                    <a href="#">About-Us</a>
+                    <a href="/about-us">About-Us</a>
                   </li>
                   <li>
                     <a href="#">Members</a>
                   </li>
                   <li>
-                    <a href="#">Engage</a>
+                    <a href="/event">Events</a>
                   </li>
                   <li>
-                    <a href="#">Events</a>
-                  </li>
-                  <li>
-                    <a href="#">Gallery</a>
+                    <a href="/gallery">Gallery</a>
                   </li>
                 </ul>
               </div>

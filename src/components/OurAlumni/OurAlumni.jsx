@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { DataTable } from "primereact/datatable";
 import { Column } from "primereact/column";
+import { Link } from "react-router-dom";
 import { products } from "./Data";
-
+import {scrollToTop} from '../../helper/scroll.js'
 export default function OurAlumni() {
   const [filteredProducts, setFilteredProducts] = useState(products);
   const [filterValue, setFilterValue] = useState("");
@@ -24,6 +25,14 @@ export default function OurAlumni() {
 
   const handleFilterCategoryChange = (e) => {
     setFilterCategory(e.target.value);
+  };
+
+  const nameBodyTemplate = (rowData) => {
+    return (
+      <Link to={`/user/profile/${encodeURIComponent(rowData.Name)}`} className="name-link" onClick={scrollToTop}>
+        {rowData.Name}
+      </Link>
+    );
   };
 
   return (
@@ -64,9 +73,13 @@ export default function OurAlumni() {
               tableStyle={{ minWidth: "50rem", color: "white" }}
             >
               <Column field="Sr. No." header="Sr. No." />
-              <Column field="Name" header="Name" />
+              <Column
+                field="Name"
+                header="Name"
+                body={nameBodyTemplate}
+              />
               <Column field="Joined Year" header="Joined Year" />
-              <Column field="Batch" header="Batch" />
+              <Column field="Batch" header="Batch"/>
               <Column field="Qualification" header="Qualification" />
               <Column field="Date of Birth" header="Date of Birth" />
               <Column

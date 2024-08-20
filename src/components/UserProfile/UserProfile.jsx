@@ -1,6 +1,12 @@
 import React from "react";
+import { useParams } from "react-router-dom";
+import { products } from "../OurAlumni/Data";
 
 export default function UserProfile() {
+  const {id} = useParams()
+  const profile = products.find((product) => product.Name === id);
+  // console.log(profile.Name);
+  
   return (
     <section className="sectionContainer">
       <div className="container">
@@ -22,7 +28,7 @@ export default function UserProfile() {
               <div className="userNameContainer">
                 <div className="row row-gap-3">
                   <div className="col-lg-6">
-                    <h3>Mrs. Angla Yu</h3>
+                    <h3>{profile.Name}</h3>
                     <p>A Full Stack Developer</p>
                     <p>Sigra,varansi, Uttar Pradesh</p>
                     <div className="socialMediaIcons">

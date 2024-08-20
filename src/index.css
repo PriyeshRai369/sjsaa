@@ -58,7 +58,7 @@ body {
   .nav {
     width: 100%;
     position: relative;
-    padding: 20px 100px;
+    padding: 10px 100px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -889,6 +889,7 @@ body {
   p {
     margin: 0;
     color: var(--text-color);
+    text-align: center;
 
     span {
       color: var(--third-color);
@@ -912,7 +913,7 @@ body.menu-open {
   }
   .linksContainer {
     position: absolute !important;
-    top: 80px;
+    top: 75px;
     right: -100%;
     background-color: black;
     display: block !important;
@@ -2122,8 +2123,8 @@ label {
 
 @media (max-width: 768px) {
   .committeeMemberImage {
-    width: 70px !important;
-    height: 70px !important;
+    width: 90px !important;
+    height: 90px !important;
   }
   .committeeMemberDetails h3 {
     font-size: 12px;
@@ -2405,6 +2406,7 @@ label {
 
   .reg-profile-pic {
     position: relative;
+    border-radius: 5px;
     width: 100%;
     height: 250px;
     background-size: cover;
@@ -2500,4 +2502,14 @@ label {
   .filterSection{
     flex-direction: column;
   }
+}
+
+.name-link {
+  color: var(--text-color); 
+  text-decoration: none;
+}
+
+.name-link:hover {
+  color: var(--third-color); 
+  text-decoration: underline; 
 }
