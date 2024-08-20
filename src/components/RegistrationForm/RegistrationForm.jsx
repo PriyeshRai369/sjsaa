@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 
 export default function RegistrationForm() {
   const [profilePic, setProfilePic] = useState(null);
@@ -16,6 +17,7 @@ export default function RegistrationForm() {
     children: "",
     wedding: "",
     address: "",
+    Mod: "addMember",
   });
 
   const handleInputChange = (e) => {
@@ -29,13 +31,34 @@ export default function RegistrationForm() {
   const handleFileChange = (event) => {
     const file = event.target.files[0];
     if (file) {
-      setProfilePic(URL.createObjectURL(file));
+      setProfilePic(file);
     }
   };
 
-  const handleSubmitBtn = () => {
-    // console.log(userData);
-    // console.log(profilePic);
+  const handleSubmitBtn = async (event) => {
+    event.preventDefault();
+
+    const formData = new FormData();
+    formData.append("profilePic", profilePic);
+    Object.keys(userData).forEach((key) => {
+      formData.append(key, userData[key]);
+    });
+
+    try {
+      const response = await axios.post(
+        "https://www.gdsons.co.in/draft/sjs/get-members-data",
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
+
+      console.log("Registration successful:", response.data);
+    } catch (error) {
+      console.error("There was an error submitting the form:", error);
+    }
   };
 
   return (
@@ -50,6 +73,7 @@ export default function RegistrationForm() {
               <div className="row">
                 <div className="col-lg-9">
                   <div className="row row-gap-4">
+                    {/* Form Fields */}
                     <div className="col-lg-6">
                       <label htmlFor="name">
                         Name<sup>*</sup>{" "}
@@ -63,6 +87,14 @@ export default function RegistrationForm() {
                         onChange={handleInputChange}
                       />
                     </div>
+
+                    <input
+                      type="hidden"
+                      id="Mod"
+                      name="Mod"
+                      placeholder="Full Name"
+                      value={userData.Mod}
+                    />
 
                     <div className="col-lg-6">
                       <label htmlFor="batch">
@@ -143,7 +175,7 @@ export default function RegistrationForm() {
                     className="reg-profile-pic"
                     style={{
                       backgroundImage: profilePic
-                        ? `url(${profilePic})`
+                        ? `url(${URL.createObjectURL(profilePic)})`
                         : "none",
                     }}
                   >
@@ -164,6 +196,7 @@ export default function RegistrationForm() {
                   <span>200w X 250h</span>
                 </div>
 
+                {/* Additional Form Fields */}
                 <div className="col-lg-4 mt-5">
                   <label htmlFor="qualification">Qualification</label>
                   <input

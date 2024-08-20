@@ -1,11 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { products } from "../OurAlumni/Data";
+import axios from "axios";
 
 export default function UserProfile() {
+  const [memberData,setMemberData] = useState([])
   const {id} = useParams()
-  const profile = products.find((product) => product.Name === id);
-  // console.log(profile.Name);
+  const profile = memberData.find((member) => member.membernace === id);
+
+
+  useEffect(() => {
+    async function fetchMember() {
+      try {
+        const response = await axios.get(
+          "https://www.gdsons.co.in/draft/sjs/all-members"
+        );
+        setMemberData(response?.data)
+      } catch (error) {
+        console.log(error.message);
+      }
+    }
+    fetchMember()
+  }, []);
   
   return (
     <section className="sectionContainer">
@@ -28,7 +44,7 @@ export default function UserProfile() {
               <div className="userNameContainer">
                 <div className="row row-gap-3">
                   <div className="col-lg-6">
-                    <h3>{profile.Name}</h3>
+                    <h3>{profile?.membernace}</h3>
                     <p>A Full Stack Developer</p>
                     <p>Sigra,varansi, Uttar Pradesh</p>
                     <div className="socialMediaIcons">
