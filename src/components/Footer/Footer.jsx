@@ -86,7 +86,8 @@ export default function Footer() {
             <div className="col-lg-3 col-md-4 col-sm-12 ">
               <div className="footerLinksContainers">
                 <h3>Contact US</h3>
-                <span className="mobNo"><i class="fa-solid fa-phone" style={{color:"var(--third-color)"}}></i>&nbsp; +91 1234567890</span>
+                <span className="mobNo"><i class="fa-solid fa-at" style={{color:"var(--third-color)"}}></i>&nbsp;  sjsaa1999@gmail.com</span>
+                
                 <br />
                 
                 <span className="mobNo"><i class="fa-solid fa-at" style={{color:"var(--third-color)"}}></i>&nbsp; sjsaadlwvns@gmail.com</span>

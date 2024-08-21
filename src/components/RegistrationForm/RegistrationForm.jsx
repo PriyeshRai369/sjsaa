@@ -7,6 +7,7 @@ import ComponentLoader from '../ComponentLoader/ComponentLoader.jsx'
 export default function RegistrationForm() {
   const [isRegistrationSuccess, setIsRegistrationSuccess] = useState(false);
   const [profilePic, setProfilePic] = useState(null);
+  const [errors, setErrors] = useState({});
   const [userData, setUserData] = useState({
     name: "",
     batch: "",
@@ -23,7 +24,7 @@ export default function RegistrationForm() {
     address: "",
     Mod: "addMember",
   });
-  const {loading,setLoading} = useContext(Context)
+  const { loading, setLoading } = useContext(Context);
 
   useEffect(() => {
     if (isRegistrationSuccess) {
@@ -51,9 +52,31 @@ export default function RegistrationForm() {
     }
   };
 
+  const validateForm = () => {
+    const newErrors = {};
+
+    if (!userData.name) newErrors.name = "Name is required";
+    if (!userData.batch) newErrors.batch = "Batch is required";
+    if (!userData.email) newErrors.email = "Email is required";
+    if (!userData.contactNo) newErrors.contactNo = "Contact number is required";
+    if (!userData.dob) newErrors.dob = "Date of birth is required";
+    if (!userData.location) newErrors.location = "Location is required";
+    if (!profilePic) newErrors.profilePic = "Profile picture is required";
+
+    setErrors(newErrors);
+
+    // Return true if no errors
+    return Object.keys(newErrors).length === 0;
+  };
+
   const handleSubmitBtn = async (event) => {
-    setLoading(true)
     event.preventDefault();
+
+    if (!validateForm()) {
+      return;
+    }
+
+    setLoading(true);
 
     const formData = new FormData();
     formData.append("profilePic", profilePic);
@@ -73,10 +96,10 @@ export default function RegistrationForm() {
       );
 
       console.log("Registration successful:", response.data);
-      setLoading(false)
-      setIsRegistrationSuccess(true)
+      setLoading(false);
+      setIsRegistrationSuccess(true);
     } catch (error) {
-      setLoading(false)
+      setLoading(false);
       console.error("There was an error submitting the form:", error);
     }
   };
@@ -105,8 +128,9 @@ export default function RegistrationForm() {
                         placeholder="Full Name"
                         value={userData.name}
                         onChange={handleInputChange}
-                        required={true}
+                        required
                       />
+                      {errors.name && <p className="error">{errors.name}</p>}
                     </div>
 
                     <input
@@ -128,8 +152,9 @@ export default function RegistrationForm() {
                         placeholder="Batch Ex :- 1998"
                         value={userData.batch}
                         onChange={handleInputChange}
-                        required={true}
+                        required
                       />
+                      {errors.batch && <p className="error">{errors.batch}</p>}
                     </div>
 
                     <div className="col-lg-6">
@@ -143,8 +168,9 @@ export default function RegistrationForm() {
                         placeholder="Your email"
                         value={userData.email}
                         onChange={handleInputChange}
-                        required={true}
+                        required
                       />
+                      {errors.email && <p className="error">{errors.email}</p>}
                     </div>
 
                     <div className="col-lg-6">
@@ -158,8 +184,11 @@ export default function RegistrationForm() {
                         placeholder="+91 1234567890"
                         value={userData.contactNo}
                         onChange={handleInputChange}
-                        required={true}
+                        required
                       />
+                      {errors.contactNo && (
+                        <p className="error">{errors.contactNo}</p>
+                      )}
                     </div>
 
                     <div className="col-lg-6">
@@ -172,8 +201,9 @@ export default function RegistrationForm() {
                         name="dob"
                         value={userData.dob}
                         onChange={handleInputChange}
-                        required={true}
+                        required
                       />
+                      {errors.dob && <p className="error">{errors.dob}</p>}
                     </div>
 
                     <div className="col-lg-6">
@@ -187,8 +217,11 @@ export default function RegistrationForm() {
                         placeholder="Your Location"
                         value={userData.location}
                         onChange={handleInputChange}
-                        required={true}
+                        required
                       />
+                      {errors.location && (
+                        <p className="error">{errors.location}</p>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -217,9 +250,13 @@ export default function RegistrationForm() {
                         height: "100%",
                         cursor: "pointer",
                       }}
+                      required
                     />
                   </div>
                   <span>200w X 250h</span>
+                  {errors.profilePic && (
+                    <p className="error">{errors.profilePic}</p>
+                  )}
                 </div>
 
                 {/* Additional Form Fields */}
@@ -232,7 +269,6 @@ export default function RegistrationForm() {
                     placeholder="Your Qualification"
                     value={userData.qualification}
                     onChange={handleInputChange}
-                    required={true}
                   />
                 </div>
 
@@ -245,7 +281,6 @@ export default function RegistrationForm() {
                     placeholder="Current career/position"
                     value={userData.career}
                     onChange={handleInputChange}
-                    required={true}
                   />
                 </div>
 
@@ -312,13 +347,19 @@ export default function RegistrationForm() {
                 </div>
               </div>
               <div className="regSubmitBtn">
-                <button onClick={handleSubmitBtn}>{loading ? <ComponentLoader/>  : "Register"} </button>
+                <button onClick={handleSubmitBtn}>
+                  {loading ? <ComponentLoader /> : "Register"}
+                </button>
               </div>
             </div>
           </div>
-        </div> 
+        </div>
       </div>
-      {isRegistrationSuccess ? <SuccessMessage status={setIsRegistrationSuccess} /> : ''}
+      {isRegistrationSuccess ? (
+        <SuccessMessage status={setIsRegistrationSuccess} />
+      ) : (
+        ""
+      )}
     </section>
   );
 }
