@@ -12,6 +12,7 @@ export default function ContextProvider({ children }) {
   const [loginModal, setLoginModal] = useState(false);
   const container = useRef();
   const aboutRef = useRef()
+  const [loading,setLoading] = useState(false)
   gsap.registerPlugin(ScrollTrigger);
 
   useGSAP(
@@ -55,7 +56,7 @@ export default function ContextProvider({ children }) {
     { scope: container }
   );
 
-  const contextValue = { loginModal, setLoginModal , container};
+  const contextValue = { loginModal, setLoginModal , container,loading,setLoading};
 
   return <Context.Provider value={contextValue}>{children}</Context.Provider>;
 }

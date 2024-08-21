@@ -13,7 +13,6 @@ gsap.registerPlugin(useGSAP);
 export default function Header() {
   const [isOpened, setIsOpened] = useState(false);
   const headerRef = useRef(null);
-  const upperHeaderRef = useRef();
   const [dropDownOpen, setDropOpen] = useState(false);
   const [memberDropDownOpen, setMemberDropDownOpen] = useState(false);
   const { loginModal, setLoginModal, container } = useContext(Context);
